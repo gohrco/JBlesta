@@ -1,0 +1,80 @@
+/* *****************************************************
+	@packageName@
+	fixes.css
+	-------------------------------------------
+	Compatible with Bletsa 3.0.6 and above
+	-------------------------------------------
+	@package         @packageName@
+	@version         @fileVers@
+	@author          @packageAuth@
+	@link            @packageLink@
+	@copyright       @packageCopy@
+	@license         @packageLice@
+ 	
+	This file provides a few minor css adjustments to allow
+		Blesta to work within the Joomla document space as
+		provided by the standard Joomla templates.
+	
+	To make custom adjustments, you should rename the file
+		/plugins/jblesta/assets/custom.css.new to custom.css
+		and insert the changes in that file to avoid losing
+		customizations.
+	
+***************************************************** */
+@CHARSET "ISO-8859-1";
+
+#jblestawrapper .layout {
+	max-width: 984px;
+    width: 100%;
+}
+
+
+#jblestawrapper .inner_layout {
+	max-width: 960px;
+	width: 100%;
+}
+
+#jblestawrapper .login_sec {
+	margin-right: 20px;
+}
+
+#jblestawrapper .page {
+	max-width: 961px;
+	width: 96%;
+}
+
+#jblestawrapper .right_content {
+	float: right;
+	width: 100%;
+}
+
+#jblestawrapper #client_login .text-item input {
+	width: 96%;
+}
+
+
+/* Poratl fixes */
+#jblestawrapper .page { color:#797979;}
+#jblestawrapper .page .half { width:50%; float:left;}
+#jblestawrapper .page .section { margin:5px 0 10px 0;}
+#jblestawrapper .page .icon { padding-left: 40px;}
+#jblestawrapper .page .description { padding-bottom:8px; margin-bottom:18px; border-bottom:1px solid #dadada;}
+#jblestawrapper .page h1 { font-size:15px;}
+#jblestawrapper .page h1 a { font-weight:bold;}
+#jblestawrapper .page p { font-size:12px; line-height:16px; padding-top:4px; margin-bottom:8px;}
+
+/* Order Fixes */
+#jblestawrapper .step_menu {
+	max-width: 959px;
+	width: 100%;
+}
+
+#jblestawrapper .step_menu ul li {
+	padding-left: 15px;
+	width: 22%;
+}
+
+#jblestawrapper .step_menu ul li a {
+	max-width: 224px;
+	width: 100%;
+}

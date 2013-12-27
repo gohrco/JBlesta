@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Packaging - WHMCS" basedir=".">
+	
+	<import file="../includes.xml" />
+	
+	<target name="package_blesta" depends="properties,dunamis_properties">
+		
+		<fileset dir="${src.build}/blesta/" id="blestafiles">
+			<include name="**/*.*" />
+		</fileset>
+		
+		<fileset dir="${dunamis.src.build}/" id="dunamiscorefiles">
+			<include name="dunamis/**/*.*" />
+			<include name="*.*" />
+		</fileset>
+		
+		<fileset dir="${dunamis.src.build}/blesta/" id="dunamiswhmcsfiles">
+			<include name="**/*.*" />
+		</fileset>
+		
+		<echo message="[1]  Creating Package Temporary Directory" />
+		<mkdir dir="${dst.package}/BLESTA" />
+		<mkdir dir="${dst.package}/BLESTA" />
+		
+		<echo message=" " />
+		<echo message="[2]  Copying Build to Temporary Directory" />
+		<copy todir="${dst.package}/BLESTA">
+			<fileset refid="blestafiles" />
+			<fileset refid="dunamiswhmcsfiles" />
+		</copy>
+		<copy file="${dst.documentation}/README.txt" todir="${dst.package}/BLESTA" />
+		<copy todir="${dst.package}/BLESTA/plugins/jblesta/framework/">
+			<fileset refid="dunamiscorefiles" />
+		</copy>
+		
+		<fileset dir="${dst.package}/BLESTA" id="packagefiles">
+			<include name="**/*.*" />
+		</fileset>
+		
+		<echo message=" " />
+		<echo message="[3]  Creating Package" />
+		<zipr_file srcid="packagefiles" dest="/" file="jblesta_for_blesta_v${project.SHORT}.zip" />
+		
+		<echo message=" " />
+		<echo message="[4]  Delete Temporary Directory" />
+		<delete dir="${dst.package}/BLESTA" />
+		
+	</target>
+	
+</project>

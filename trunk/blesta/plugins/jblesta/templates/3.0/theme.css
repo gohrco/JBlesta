@@ -1,0 +1,40 @@
+/** ****************************************************
+	@packageName@
+	-------------------------------------------
+	Compatible with Bletsa 3.0 and above
+	-------------------------------------------
+    @package         @packageName@
+    @subpackage      Blesta
+    @version         @fileVers@
+    @author          @packageAuth@
+    @link            @packageLink@
+    @copyright       @packageCopy@
+    @license         @packageLice@
+    
+    This is a custom theme.css file provided by the 
+        J!Blesta application.  Future updates to J!Blesta
+        may result in changes to this file, so any adjustments
+        you make should be backed up to avoid losses.
+	
+***************************************************** */
+
+#jblestawrapper #outer_header .top_sec{ background: #theme_header_bg_color_top; background: -webkit-gradient(linear, 0 0, 0 bottom, from(#theme_header_bg_color_top), to(#theme_header_bg_color_bottom)); background: -webkit-linear-gradient(#theme_header_bg_color_top, #theme_header_bg_color_bottom); background: -moz-linear-gradient(#theme_header_bg_color_top, #theme_header_bg_color_bottom); background: -ms-linear-gradient(#theme_header_bg_color_top, #theme_header_bg_color_bottom); background: -o-linear-gradient(#theme_header_bg_color_top, #theme_header_bg_color_bottom); background: linear-gradient(#theme_header_bg_color_top, #theme_header_bg_color_bottom); -pie-background: linear-gradient(#theme_header_bg_color_top, #theme_header_bg_color_bottom); position: relative; behavior: url(../javascript/PIE.htc);}
+#jblestawrapper .outer_account{ background: #theme_page_title_background_color_top; background: -webkit-gradient(linear, 0 0, 0 bottom, from(#theme_page_title_background_color_top), to(#34353a)); background: -webkit-linear-gradient(#theme_page_title_background_color_top, #theme_page_title_background_color_bottom); background: -moz-linear-gradient(#theme_page_title_background_color_top, #theme_page_title_background_color_bottom); background: -ms-linear-gradient(#theme_page_title_background_color_top, #theme_page_title_background_color_bottom); background: -o-linear-gradient(#theme_page_title_background_color_top, #theme_page_title_background_color_bottom); background: linear-gradient(#theme_page_title_background_color_top, #theme_page_title_background_color_bottom); -pie-background: linear-gradient(#theme_page_title_background_color_top, #theme_page_title_background_color_bottom); position: relative; behavior: url(../javascript/PIE.htc);}
+#jblestawrapper .outer_nav{ background: #theme_navigation_background_color_top; background: -webkit-gradient(linear, 0 0, 0 bottom, from(#theme_navigation_background_color_top), to(#theme_navigation_background_color_bottom)); background: -webkit-linear-gradient(#theme_navigation_background_color_top, #theme_navigation_background_color_bottom); background: -moz-linear-gradient(#theme_navigation_background_color_top, #theme_navigation_background_color_bottom); background: -ms-linear-gradient(#theme_navigation_background_color_top, #theme_navigation_background_color_bottom); background: -o-linear-gradient(#theme_navigation_background_color_top, #theme_navigation_background_color_bottom); background: linear-gradient(#theme_navigation_background_color_top, #theme_navigation_background_color_bottom); -pie-background: linear-gradient(#theme_navigation_background_color_top, #theme_navigation_background_color_bottom); position: relative; behavior: url(../javascript/PIE.htc);}
+#jblestawrapper .outer_account h2 { color:#theme_page_title_text_color;}
+#jblestawrapper .login_sec .button{ -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; background: #theme_page_title_button_background_color_top; background: -webkit-gradient(linear, 0 0, 0 bottom, from(#theme_page_title_button_background_color_top), to(#theme_page_title_button_background_color_bottom)); background: -webkit-linear-gradient(#theme_page_title_button_background_color_top, #theme_page_title_button_background_color_bottom); background: -moz-linear-gradient(#theme_page_title_button_background_color_top, #theme_page_title_button_background_color_bottom); background: -ms-linear-gradient(#theme_page_title_button_background_color_top, #theme_page_title_button_background_color_bottom); background: -o-linear-gradient(#theme_page_title_button_background_color_top, #theme_page_title_button_background_color_bottom); background: linear-gradient(#theme_page_title_button_background_color_top, #theme_page_title_button_background_color_bottom); -pie-background: linear-gradient(#theme_page_title_button_background_color_top, #theme_page_title_button_background_color_bottom); position: relative; behavior: url(../javascript/PIE.htc);}
+#jblestawrapper #nav ul li a{color: #theme_navigation_text_color;}
+#jblestawrapper #nav ul li a:hover,
+#jblestawrapper #nav ul li a.active { color:#theme_navigation_text_active_color;}
+#jblestawrapper .login_sec .button a { color:#theme_navigation_text_active_color;}
+#jblestawrapper .login_sec .button a:hover { color:#theme_navigation_text_color;}
+#jblestawrapper a,
+#jblestawrapper .common_nav ul li a,
+#jblestawrapper .mail_sec p em a,
+#jblestawrapper .table_sec td a,
+#jblestawrapper .footer p a,
+#jblestawrapper .footer p a.blue,
+#jblestawrapper .pagination ul li a { color:#theme_link_color;}
+#jblestawrapper .invoice div.element a { color:#theme_link_settings_color;}
+#jblestawrapper .page { background-color:#theme_page_background_color;}
+

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset name="general" label="GENERAL_PARAMETERS" description="">
+		<field name="enable" type="radio" label="COM_JBLESTA_CONFIG_ENABLE_LABEL" description="COM_JBLESTA_CONFIG_ENABLE_DESC" class="inputbox btn-group" default="1">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="debug" type="radio" label="COM_JBLESTA_CONFIG_DEBUG_LABEL" description="COM_JBLESTA_CONFIG_DEBUG_DESC" class="inputbox btn-group" default="0">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="downloadid" type="text" label="COM_JBLESTA_CONFIG_DOWNLOADID_LABEL" description="COM_JBLESTA_CONFIG_DOWNLOADID_DESC" class="inputbox" size="40" />
+		
+		<field type="spacer" name="apihr" hr="true" />
+		<field type="spacer" name="apispacer" label="COM_JBLESTA_SPACER_API" />
+		<field name="blestaapiurl" type="text" label="COM_JBLESTA_CONFIG_BLESTAAPIURL_LABEL" description="COM_JBLESTA_CONFIG_BLESTAAPIURL_DESC" class="inputbox" size="40" />
+		<field name="blestaapiusername" type="text" label="COM_JBLESTA_CONFIG_BLESTAAPIUSERNAME_LABEL" description="COM_JBLESTA_CONFIG_BLESTAAPIUSERNAME_DESC" class="inputbox" size="40" />
+		<field name="blestaapikey" type="password" label="COM_JBLESTA_CONFIG_BLESTAAPIKEY_LABEL" description="COM_JBLESTA_CONFIG_BLESTAAPIKEY_DESC" class="inputbox" size="40" />
+		<field type="spacer" name="apihr" hr="true" />
+		<field name="blestacompany" type="blestacompanies" id="blestacompany" description="COM_JBLESTA_CONFIG_BLESTACOMPANY_DESC" filter="string" label="COM_JBLESTA_CONFIG_BLESTACOMPANY_LABEL" message="COM_JBLESTA_CONFIG_BLESTACOMPANY_MESSAGE" default="1" />
+		
+		<field type="spacer" name="reghr" hr="true" />
+		<field type="spacer" name="regspacer" label="COM_JBLESTA_SPACER_REG" />
+		<field name="regmethod" type="list" label="COM_JBLESTA_CONFIG_REGMETHOD_LABEL" description="COM_JBLESTA_CONFIG_REGMETHOD_DESC" class="inputbox" default="1">
+			<option value="0">OPTN_JOOMLA_REG</option>
+			<option value="1">OPTN_WHMCS_REG</option>
+		</field>
+		<field name="defaultcountry" type="blestacountries" id="defaultcountry" description="COM_JBLESTA_CONFIG_DEFAULTCOUNTRY_DESC" filter="string" label="COM_JBLESTA_CONFIG_DEFAULTCOUNTRY_LABEL" message="COM_JBLESTA_CONFIG_DEFAULTCOUNTRY_MESSAGE" default="US" />
+		
+		<field type="spacer" name="tokenhr" hr="true" />
+		<field type="spacer" name="tokenspacer" label="COM_JBLESTA_SPACER_TOKEN" />
+		<field name="token" type="password" value="" description="COM_JBLESTA_CONFIG_TOKEN_DESC" label="COM_JBLESTA_CONFIG_TOKEN_LABEL" />
+		
+	</fieldset>
+	<fieldset name="api" label="USER_PARAMETERS" description="" addfieldpath="/administrator/components/com_jblesta/models/fields">
+		<field name="enableuserbridging" type="radio" label="COM_JBLESTA_CONFIG_ENABLEUSERBRIDGING_LABEL" description="COM_JBLESTA_CONFIG_ENABLEUSERBRIDGING_DESC" class="inputbox btn-group" default="1">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="userdeletemethod" type="list" label="COM_JBLESTA_CONFIG_USERDELETEMETHOD_LABEL" description="COM_JBLESTA_CONFIG_USERDELETEMETHOD_DESC" class="inputbox" default="1">
+			<option value="0">OPTN_USERDEL_NONE</option>
+			<option value="1">OPTN_USERDEL_CLOSE</option>
+			<option value="2">OPTN_USERDEL_REMOVE</option>
+		</field>
+		<field type="spacer" name="apihr" hr="true" />
+		<field type="spacer" name="apispacer" label="COM_JBLESTA_SPACER_USERADD" />
+		<field name="requireactivation" type="radio" label="COM_JBLESTA_CONFIG_REQUIREACTIVATION_LABEL" description="COM_JBLESTA_CONFIG_REQUIREACTIVATION_DESC" class="inputbox btn-group" default="0">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="useraddmethod" type="list" label="COM_JBLESTA_CONFIG_USERADDMETHOD_LABEL" description="COM_JBLESTA_CONFIG_USERADDMETHOD_DESC" class="inputbox" default="4">
+			<option value="0">OPTN_USERADD_NONE</option>
+			<option value="1">OPTN_USERADD_JONLY</option>
+			<option value="2">OPTN_USERADD_WONLY</option>
+			<option value="4">OPTN_USERADD_BOTH</option>
+		</field>
+		<field name="useraddusernamepattern" type="list" label="COM_JBLESTA_CONFIG_USERADDUSERNAMEPATTERN_LABEL" description="COM_JBLESTA_CONFIG_USERADDUSERNAMEPATTERN_DESC" class="inputbox" default="4">
+			<option value="0" >OPTN_USERADDUSERNAMEPATTERN_FRSLT</option>
+			<option value="1" >OPTN_USERADDUSERNAMEPATTERN_LTFRS</option>
+			<option value="2" >OPTN_USERADDUSERNAMEPATTERN_RANDM</option>
+			<option value="4" >OPTN_USERADDUSERNAMEPATTERN_FLAST</option>
+			<option value="8" >OPTN_USERADDUSERNAMEPATTERN_LASTF</option>
+			<option value="16">OPTN_USERADDUSERNAMEPATTERN_FIRST</option>
+			<option value="32">OPTN_USERADDUSERNAMEPATTERN_LASTO</option>
+			<option value="64">OPTN_USERADDUSERNAMEPATTERN_EMAIL</option>
+		</field>
+		
+	</fieldset>
+	
+	<field name="languagemap" type="hidden" />
+	<field name="updates" type="hidden" />
+	
+	<fields name="jwhmcslanguage">
+		<field name="languageenable" type="radio" label="COM_JBLESTA_CONFIG_LANGUAGEENABLE_LABEL" description="COM_JBLESTA_CONFIG_LANGUAGEENABLE_DESC" class="inputbox btn-group" default="0">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="languagemap" type="hidden" />
+		<!-- This is filled in by our System Plugin -->
+	</fields>
+	
+	<fieldset name="visualsettings" label="VISUAL_SETTINGS">
+		<field name="pagelist" type="textarea" default="Portal=index.php&#13;&#10;Client Login=client/login/&#13;&#10;Dashboard=client/&#13;&#10;Payment Accounts=client/accounts/&#13;&#10;Contacts=client/contacts&#13;&#10;Downloads=client/plugin/download_manager/client_main/&#13;&#10;Support=blesta/client/plugin/support_manager/client_tickets/&#13;&#10;Order=order/&#13;&#10;Logout=client/logout/" label="COM_JBLESTA_CONFIG_VISUAL_PAGELIST_LABEL" description="COM_JBLESTA_CONFIG_VISUAL_PAGELIST_DESC" rows="5" cols="40" />
+	</fieldset>
+	
+	<fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL" description="JCONFIG_PERMISSIONS_DESC">
+		<field
+			name="rules"
+			type="rules"
+			label="JCONFIG_PERMISSIONS_LABEL"
+			class="inputbox"
+			validate="rules"
+			filter="rules"
+			component="com_jblesta"
+			section="component"
+			/>
+	</fieldset>
+</config>

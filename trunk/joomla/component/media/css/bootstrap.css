@@ -1,0 +1,24 @@
+@CHARSET "ISO-8859-1";
+
+/*
+ * Needed to correct for input field height conflict (Joomla! 3.x+)
+ */
+#jblesta select,
+#jblesta textarea,
+#jblesta input[type="text"],
+#jblesta input[type="password"],
+#jblesta input[type="datetime"],
+#jblesta input[type="datetime-local"],
+#jblesta input[type="date"],
+#jblesta input[type="month"],
+#jblesta input[type="time"],
+#jblesta input[type="week"],
+#jblesta input[type="number"],
+#jblesta input[type="email"],
+#jblesta input[type="url"],
+#jblesta input[type="search"],
+#jblesta input[type="tel"],
+#jblesta input[type="color"],
+#jblesta .uneditable-input {
+	min-height: 30px;
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Packaging" basedir=".">
+	
+	<import file="../includes.xml" />
+	<import file="../../../Dunamis Framework/.buildfiles/dunamis.xml" />
+	
+	<!-- Include individual files now -->
+	<import file="joomla.xml" />
+	<import file="blesta.xml" />
+	
+	<target name="packaging_all" depends="properties">
+		
+		<!-- <build_changelog /> -->
+		
+			<echo message=" " />
+			<echo message="Begin Packaging Belong" />
+			<echo message="-----------------------------------------------------" />
+		<antcall target="package_joomla" />
+		<antcall target="package_blesta" />	
+			<echo message=" " />
+			<echo message="Completed Packaging Belong" />
+			<echo message="-----------------------------------------------------" />
+			<echo message=" " />
+			<echo message=" " />
+			
+		<!-- <clean_changelog /> -->
+		<!-- <create_release /> -->
+		
+	</target>
+	
+</project>

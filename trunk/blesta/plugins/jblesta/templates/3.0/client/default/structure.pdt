@@ -1,0 +1,216 @@
+<?php
+/** ****************************************************
+	@packageName@
+	-------------------------------------------
+	Compatible with Bletsa 3.0.6 and above
+	-------------------------------------------
+	@package         @packageName@
+	@version         @fileVers@
+	@author          @packageAuth@
+	@link            @packageLink@
+	@copyright       @packageCopy@
+	@license         @packageLice@
+ 	
+	This is a custom structure.pdt file provided by the 
+		J!Blesta application.  Future updates to J!Blesta
+		may result in changes to this file, so any adjustments
+		you make should be backed up to avoid losses.
+	
+***************************************************** */
+
+// Extract our document vars from dunamis
+extract( dunloader( 'document', true )->getVars() );
+
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <?php echo dunloader('document', true)->renderMetaData() ?>
+        
+        <title><?php echo (($page_title = (isset($page_title) ? $page_title : $this->_($page_title_lang, true, $get_params))) ? $this->Html->_($page_title, true) . " | " : "") . $this->Html->_($system_company->name, true);?></title>
+        
+        <?php echo dunmodule( 'jblesta.render' )->getItem( 'head', $vars ); ?>
+        <?php echo dunloader( 'document', true )->renderHeadData() ?>
+        
+        <link rel="shortcut icon" href="<?php echo $this->view_dir;?>images/favicon.ico" />
+        
+        <?php if ( $jblesta->enabled ) : ?>
+            <link href="<?php echo $jblesta->cssdir; ?>layout" rel="stylesheet" type="text/css" />
+            <link href="<?php echo $jblesta->cssdir; ?>css3" rel="stylesheet" type="text/css" />
+            <!--[if IE 9]><link href="<?php echo $jblesta->cssdir; ?>ie9_css3" rel="stylesheet" type="text/css" /><![endif]-->
+        <?php else : ?>
+            <link href="<?php echo $this->view_dir;?>css/layout.css" rel="stylesheet" type="text/css" />
+            <link href="<?php echo $this->view_dir;?>css/css3.css" rel="stylesheet" type="text/css" />
+            <!--[if IE 9]><link href="<?php echo $this->view_dir;?>css/ie9_css3.css" rel="stylesheet" type="text/css" /><![endif]-->
+        <?php endif; ?>
+        
+        <link href="<?php echo $this->view_dir;?>css/jquery.qtip.css" rel="stylesheet" type="text/css" />
+        
+        <?php
+        // Theme CSS
+        if (isset($theme_css) && $jblesta->enabled ) {
+		
+		// Add our directory if one isnt specd
+		if ( ( strlen( $theme_css ) - 1 ) == strrpos( $theme_css, '=' ) ) $theme_css .= 'jblesta';
+		
+		?>
+		<link href="<?php $this->Html->_($theme_css);?>" rel="stylesheet" type="text/css" media="screen" />
+		<?php
+		}
+		?>
+		
+		<?php echo $this->Javascript->getFiles("head");?>
+		<?php
+		// swap our custom head item in case we have it ;-)
+		if ( $jblesta->enabled ) {
+			echo dunmodule( 'jblesta.render' )->swapItem( $custom_head );
+			?><link href="<?php echo $jblesta->cssdir; ?>fixes" rel="stylesheet" type="text/css" /><?php
+		}
+		else {
+			echo $this->Html->ifSet($custom_head);
+		}
+		?>
+    </head>
+<?php 
+if (! $jblesta->enabled )
+{
+	echo "    <body>";
+}
+
+echo dunmodule( 'jblesta.render' )->getItem( 'header', $vars );
+?>
+        <section id="outer_layout"<?php echo ($this->Html->ifSet($outer_class) ? " class=\"" . $this->Html->_($outer_class, true) . "\"" : "");?>>
+            <header id="outer_header">
+<?php
+if (! $jblesta->enabled ) :
+?>
+                <section class="top_sec">
+                    <section class="layout">
+                        <div class="inner_layout">                        
+                            <div class="logo">
+								<a href="<?php echo $this->Html->safe($this->base_uri);?>">
+									<?php
+									if (!empty($theme_logo)) {
+									?>
+										<img src="<?php $this->Html->_($theme_logo);?>" alt="Logo" />
+									<?php
+									}
+									else {
+									?>
+										<img src="<?php echo $this->view_dir;?>images/logo.png" alt="Blesta" />
+									<?php
+									}
+									?>
+								</a>
+							</div>
+							
+							<?php
+							if ($this->Html->ifSet($staff_as_client)) {
+							?>
+							<div class="global_note"><?php $this->_("AppController.client_structure.staff_as_client_note", false, $this->Html->ifSet($this->admin_uri) . "clients/logoutasclient/");?></div>		
+							<?php
+							}
+							?>
+                        </div>
+                    </section>
+                </section>
+<?php
+endif;
+?>
+                <section class="outer_account">
+                    <section class="layout">
+                        <div class="inner_layout">
+                                <h2>
+									<?php
+									if ($this->Html->ifSet($title)) {
+										$this->Html->_($title);
+									}
+									else {
+										$this->_("AppController.client_structure.default_title");
+									}
+									?>
+								</h2>
+                                <div class="login_sec">
+									<?php
+									if ($this->Html->ifSet($logged_in)) {
+									?>
+                                    <span class="button"><a href="<?php echo $this->Html->safe($this->client_uri . "logout/");?>"><?php $this->_("AppController.client_structure.text_logout");?></a></span>
+									<?php
+									}
+									else {
+									?>
+									<span class="button"><a href="<?php echo $this->Html->safe($this->client_uri . "login/");?>"><?php $this->_("AppController.client_structure.text_login");?></a></span>
+									<?php
+									}
+									
+									if ($this->Html->ifSet($portal_installed, false)) {
+									?>
+                                    <span class="button"><a href="<?php echo $this->Html->safe(WEBDIR);?>"><?php $this->_("AppController.client_structure.text_return_to_portal");?></a></span>
+									<?php
+									}
+									?>
+                                </div>
+                        </div>
+                    </section>
+                </section>
+				<?php
+				if ($this->Html->ifSet($logged_in)) {
+				?>
+                <section class="outer_nav">
+                    <section class="layout">
+                        <div class="inner_layout">
+                            <nav id="nav">
+								<ul>
+									<?php
+									$i = 0;
+									$nav_total = count($nav);
+									foreach ($this->Html->ifSet($nav, array()) as $link => $value) {
+										$attributes = array();
+										$link_attributes = array();
+										if ($value['active'])
+											$link_attributes['class'][] = "active";
+											
+										if ($i == 0)
+											$attributes['class'][] = "first";
+										elseif ($i == $nav_total-1)
+											$attributes['class'][] = "last";
+									?>
+									<li<?php echo $this->Html->buildAttributes($attributes);?>>
+										<a href="<?php $this->Html->_($link);?>"<?php echo $this->Html->buildAttributes($link_attributes);?>><?php $this->Html->_($value['name']);?></a>
+									</li>
+									<?php
+										$i++;
+									}
+									unset($i);
+									?>	
+								</ul>
+                            </nav>
+                        </div>
+                    </section>
+                </section>
+				<?php
+				}
+				?>
+            </header>
+            <section class="layout">
+                <div class="page">
+					<?php echo $content;?>
+                </div>
+            </section>
+            <footer class="footer">
+                <section class="layout">                        
+                    <p>Powered by <a href="http://www.blesta.com/" class="blue" target="_blank">Blesta</a>, &copy; Phillips Data, Inc.</p>                           
+                </section>
+            </footer>
+        </section>
+		
+<?php
+
+echo $this->Javascript->getFiles("body");
+echo $this->Javascript->getInline();
+echo dunloader( 'document', true )->renderFootData();
+echo dunmodule( 'jblesta.render' )->getItem( 'footer', $vars );
+?>
+    </body>
+</html>
