@@ -235,6 +235,7 @@ $lang['admin.form.settings.label.imageurl']					=	'Custom URL';
 $lang['admin.form.settings.label.menuitem']					=	'Menu Item';
 $lang['admin.form.settings.label.resetcss']					=	'Reset CSS';
 $lang['admin.form.settings.label.showmyinfo']				=	'Show My Info';
+$lang['admin.form.settings.label.showheader']				=	'Show Header';
 
 $lang['admin.form.settings.description.visualenable']		=	'This setting will enable or disable the visual integration from the Blesta side of the product.';
 $lang['admin.form.settings.description.jqueryenable']		=	'Turn this on to enable the inclusion of the jQuery library from Blesta.  By default Blesta needs jQuery and does include it, however your Joomla template may already include a jQuery library in it which can cause javascript problems.  Typically you would disable this if you are running Joomla! 3 or a YooTheme template which includes jQuery by default.';
@@ -242,6 +243,7 @@ $lang['admin.form.settings.description.imageurl']			=	'Enter a full URL to repoi
 $lang['admin.form.settings.description.menuitem']			=	'Select a menu item from the drop down list to retrieve from Joomla.';
 $lang['admin.form.settings.description.resetcss']			=	'Enable the reset.css to revert any template changes made by your Joomla template so the WHMCS css work as expected.';
 $lang['admin.form.settings.description.showmyinfo']			=	'On some Joomla! templates the space provided for rendering the Blesta application is limited.  You can disable the display of the left panel which would include the "My Info" box to provide more room to display content within your template area.';
+$lang['admin.form.settings.description.showheader']			=	'Disable this setting to hide the header of the Blesta page containing the large page title and Return to Portal / Log In links.  <strong>Note:</strong> This will also hide the links that appear directly beneath once logged in - be sure to provide some way for your clients to access their account details.';
 
 $lang['customimageurl.label']	=	"URL for Images / CSS / JS";
 $lang['customimageurl.optn.joomla']	=	"Use Joomla URL";
@@ -338,6 +340,9 @@ $lang['updates.init.subtitle']	=	"Downloading version %s...";
 $lang['updates.download.title']		=	"Installing Update";
 $lang['updates.download.subtitle']	=	"Installing version %s...";
 
+$lang['updates.install.title']		=	"Product Installed";
+$lang['updates.install.subtitle']	=	'Upgrading system...';
+
 $lang['updates.complete.title']		=	"Upgrade Complete!";
 $lang['updates.complete.subtitle']	=	"Version %s installed";
 
@@ -348,6 +353,7 @@ $lang['updates.complete.subtitle']	=	"Version %s installed";
 $lang['install.file.error.read']	=	'There was a problem reading the %s file';
 $lang['install.file.error.version']	=	'Unable to determine the version of the %s file';
 $lang['install.file.error.newer']	=	'%s is newer than %s';
+$lang['install.file.error.chksum']	=	'The file checksums did not match - if you have customized the template file this is okay!';
 $lang['install.file.jblesta']		=	'the J!Blesta template file';
 $lang['install.file.template']		=	'the template file currently being used';
 

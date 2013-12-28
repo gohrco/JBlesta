@@ -85,17 +85,17 @@ $form	= array(
 				'labeloff'		=> 'jblesta.form.toggleyn.disabled',
 				'label'			=> 'jblesta.admin.form.settings.label.showmyinfo',
 				'description'	=> 'jblesta.admin.form.settings.description.showmyinfo',
-		),/*
-		'shownavbar' => array(
-				'order'			=> 70,
+		),
+		'showheader' => array(
+				'order'			=> 80,
 				'type'			=> 'toggleyn',
 				'value'			=> true,
 				'validation'	=> '',
 				'labelon'		=> 'jblesta.form.toggleyn.enabled',
 				'labeloff'		=> 'jblesta.form.toggleyn.disabled',
-				'label'			=> 'jblesta.admin.form.settings.label.shownavbar',
-				'description'	=> 'jblesta.admin.form.settings.description.shownavbar',
-		),
+				'label'			=> 'jblesta.admin.form.settings.label.showheader',
+				'description'	=> 'jblesta.admin.form.settings.description.showheader',
+		),/*
 		'showfooter' => array(
 				'order'			=> 80,
 				'type'			=> 'toggleyn',

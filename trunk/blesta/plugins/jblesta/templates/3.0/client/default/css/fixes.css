@@ -78,3 +78,8 @@
 	max-width: 224px;
 	width: 100%;
 }
+
+/* reCaptcha correction */
+#jblestawrapper #recaptcha_widget_div {
+	clear: both;
+}

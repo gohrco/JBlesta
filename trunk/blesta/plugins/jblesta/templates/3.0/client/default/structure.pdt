@@ -117,6 +117,8 @@ if (! $jblesta->enabled ) :
                 </section>
 <?php
 endif;
+
+if ( (! $jblesta->enabled ) || ( $jblesta->enabled && $jblesta->showheader ) ) :
 ?>
                 <section class="outer_account">
                     <section class="layout">
@@ -191,6 +193,7 @@ endif;
                 </section>
 				<?php
 				}
+endif;
 				?>
             </header>
             <section class="layout">

@@ -73,6 +73,8 @@ class JFormFieldPageList extends JFormFieldList
 			$pagetxt	=	explode( "\r\n", trim( $config->get( 'pagelist' ) ) );
 			
 			foreach( $pagetxt as $page ) {
+				$page	=	trim( $page );
+				if ( empty( $page ) ) continue;
 				$tmp	=	explode( "=", $page );
 				$name	=	array_shift( $tmp );
 				$options[]	=	(object) array( 'value'	=> base64_encode( implode( "=", $tmp ) ), 'text' => $name );

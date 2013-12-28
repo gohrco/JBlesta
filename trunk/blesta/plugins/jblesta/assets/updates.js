@@ -154,10 +154,51 @@ function installUpdate()
 	// Success
 	resp.done( function( msg ) {
 		
+		title.html( msg.title );
+		subtitle.html( msg.subtitle );
+		
+		if ( msg.state == 1 ) {
+			installFinish();
+		}
+		else {
+			img.removeClass('update-init' ).addClass('update-error');
+		}
+	});
+	
+	// Failure
+	resp.fail( function( jqXHR, msg ) {
+		title.html( 'Error Encountered' );
+		subtitle.html( msg );
+		img.removeClass('update-init' ).addClass('update-error');
+	});
+	
+	
+}
+
+
+function installFinish()
+{
+	var btn	=	jqdun( '#btn-updates' );
+	var img	=	jqdun( '#img-updates' );
+	var url	=	jqdun( '#jblestaurl' ).val();
+	
+	var title		=	jqdun( '#upd-title' );
+	var subtitle	=	jqdun( '#upd-subtitle' );
+	
+	// Make the Ajax Call
+	var resp	= jqdun.ajax({
+					type: "POST",
+					url: url + '/ajax/updatefinish',
+					dataType: 'json',
+					data: {}
+				});
+	
+	// Success
+	resp.done( function( msg ) {
+		
 		img.removeClass('update-init' ).addClass( 'update-current' );
 		title.html( msg.title );
 		subtitle.html( msg.subtitle );
-		location.reload();
 	});
 	
 	// Failure

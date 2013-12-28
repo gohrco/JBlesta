@@ -36,6 +36,13 @@ class JFormFieldBlestaclientgroups extends JFormFieldList
 	 */
 	protected $type = 'Blestaclientgroups';
 
+	/**
+	 * We fetch our optns when we get the input so we can disable if we fail
+	 * @var		array
+	 * @since	1.0.0
+	 */
+	private $_myoptns = array();
+	
 	
 	/**
 	 * Method to get the input field from the form object
@@ -47,11 +54,21 @@ class JFormFieldBlestaclientgroups extends JFormFieldList
 	 */
 	protected function getInput()
 	{
+		$config			=	dunloader( 'config', 'com_jblesta' );
+		
 		// Grab the default value if not set
 		if ( empty( $this->value ) ) {
-			$config			=	dunloader( 'config', 'com_jblesta' );
 			$this->value	=	$config->get( 'defaultclientgroup' );
 		}
+		
+		// Lets get the options here ;-)
+		$api = dunloader( 'api', 'com_jblesta' );
+		$this->_myoptns	=	$api->getclientgroups( $config->get( 'blestacompany', false ) );
+		
+		if ( empty( $this->_myoptns ) || $this->_myoptns === false ) {
+			$this->element->addAttribute( 'disabled', 'true' );
+		}
+		
 		
 		return parent :: getInput();
 	}
@@ -67,22 +84,10 @@ class JFormFieldBlestaclientgroups extends JFormFieldList
 	 */
 	protected function getOptions()
 	{
-		$config		=	dunloader( 'config', 'com_jblesta' );
-		$api		=	dunloader( 'api', 'com_jblesta' );
-		$groups		=	$api->getclientgroups( $config->get( 'blestacompany', '1' ) );
+		$groups		=	$this->_myoptns;
 		
 		// Catch errors
 		if (! $groups || ! is_array( $groups ) ) {
-			$msg	=	$api->getError();
-			
-			// Get to the error message
-			if ( version_compare( JVERSION, '3.0', 'ge' ) ) {
-				JFactory::getApplication()->enqueueMessage( "{$msg}" );
-			}
-			else {
-				JError::raiseNotice( 100, "{$msg}" );
-			}
-			
 			return array();
 		}
 		

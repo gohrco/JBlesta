@@ -266,12 +266,12 @@ class plgSystemJblesta_sysm extends JPlugin
 	 */
 	public function onAfterRoute()
 	{
-		return;
 		// Ensure we can run this
 		if (! $this->_enabled ) return false;
 		
 		// Initialize
 		$config		=	dunloader( 'config', 'com_jblesta' );
+		$api		=	dunloader( 'api', 'com_jblesta' );
 		$input		=	dunloader( 'input', true );
 		$joomla		=   $this->_getJoomlaTasks();
 		$app		=	JFactory :: getApplication();
@@ -287,7 +287,7 @@ class plgSystemJblesta_sysm extends JPlugin
 		
 		// Registration Method
 		$regmethod	=	$config->get( 'regmethod' );
-		
+		$orderform	=	$config->get( 'registrationform' );
 		
 		// ======================================
 		// 	REGISTRATION CHECK
@@ -296,11 +296,16 @@ class plgSystemJblesta_sysm extends JPlugin
 			&&	(	$task == $joomla->regtask
 				||	$view == $joomla->regview )
 			&&	$regmethod == '1'
-			&&	$user->get( 'guest' ) )
+			&&	$user->get( 'guest' ) 
+			&&	$orderform )
 		{
-			$uri		=	DunUri :: getInstance( $config->get( 'whmcsurl' ), true );
-			$uri->setPath( rtrim( $uri->getPath(), '/' ) . '/register.php' );
-			$newlink	=	$uri->toString();
+			$form	=	$api->getorderform( $orderform );
+			
+			if ( $form ) {
+				$uri		=	DunUri :: getInstance( $config->get( 'blestaapiurl' ), true );
+				$uri->setPath( rtrim( $uri->getPath(), '/' ) . '/plugin/order/main/signup/' . $form->label );
+				$newlink	=	$uri->toString();
+			}
 		}
 		
 		if ( $newlink != null ) {

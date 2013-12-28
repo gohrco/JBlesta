@@ -150,51 +150,24 @@ class JblestaInstallDunModule extends BlestaDunModule
 		}
 	
 		return true;
-		/*
-			dunloader( 'helpers', true );
-		if (! defined( 'JBLESTAPDT' ) ) define( 'JBLESTAPDT', dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR );
+	}
 	
-		// Gather list of files
-		$pdts	=	DunHelper :: getFiles( 'structure' );
-		$new	=	DunHelper :: getFiles( 'structure', 'pdt', JBLESTAPDT );
-		$cnt	=	count( $pdts );
-		$items	=	array();
 	
-		for ( $i=0; $i<$cnt; $i++ ) {
-		$pdt = $pdts[$i];
-	
-		if ( strpos( $pdt, 'admin' ) !== false ) {
-		unset( $pdts[$i] );
-		continue;
+	/**
+	 * Trigger an upgrade event from ajax
+	 * @access		public
+	 * @version		@fileVers@
+	 *
+	 * @since		1.0.0
+	 */
+	public function triggerUpgrade()
+	{
+		Loader :: loadModels( $this, array( 'PluginManager' ) );
+		$plugins	=	$this->PluginManager->getByDir( 'jblesta' );
+		
+		foreach ( $plugins as $plugin ) {
+			$this->PluginManager->upgrade( $plugin->id );
 		}
-	
-		foreach ( $new as $n ) {
-		if ( str_replace( VIEWDIR, '', $pdt ) == str_replace( JBLESTAPDT, '', $n ) ) {
-		$items[]	=	str_replace( JBLESTAPDT, '', $n );
-		}
-		}
-		}
-	
-		// Perform change out of structure files
-		foreach ( $items as $item ) {
-		DunHelper :: changeFileExtension( VIEWDIR . $item, 'jblesta' );
-		$content	=	DunHelper :: readFile( JBLESTAPDT . $item );
-		DunHelper :: writeFile( VIEWDIR . $item, $content );
-		}
-	
-		// Now we need to handle the theme.css file
-		$path	=	VIEWDIR
-		.	'client' . DIRECTORY_SEPARATOR
-		.	'default' . DIRECTORY_SEPARATOR
-		.	'css' . DIRECTORY_SEPARATOR
-		.	'jblesta' . DIRECTORY_SEPARATOR;
-	
-		if (! is_dir( $path ) ) {
-		@mkdir( $path );
-		}
-	
-		@copy( JBLESTAPDT . 'theme.css', $path . 'theme.css' );
-		*/
 	}
 	
 	
@@ -237,6 +210,19 @@ class JblestaInstallDunModule extends BlestaDunModule
 	
 	
 	/**
+	 * Perform any upgrade logic
+	 * @access		public
+	 * @version		@fileVers@
+	 *
+	 * @since		1.0.0
+	 */
+	public function upgrade()
+	{
+		
+	}
+	
+	
+	/**
 	 * Method to get the table values
 	 * @access		private
 	 * @version		@fileVers@
@@ -272,13 +258,14 @@ class JblestaInstallDunModule extends BlestaDunModule
 					'usernamefield'	=> null,
 		
 					// Visual Settings
-					'visualenable'		=> true,
+					'visualenable'		=>	true,
 					//'jqueryenable'		=> true,
-					'customimageurl'	=> 1,
-					'imageurl'			=> null,
-					'menuitem'			=> null,
-					'resetcss'			=> 1,
-					'showmyinfo'		=> false,
+					'customimageurl'	=>	1,
+					'imageurl'			=>	null,
+					'menuitem'			=>	null,
+					'resetcss'			=>	1,
+					'showmyinfo'		=>	false,
+					'showheader'		=>	true,
 					//'shownavbar'		=> false,
 					//'showfooter'		=> true,
 		
@@ -540,6 +527,11 @@ class JBFile extends DunObject
 		$data	=	( md5_file( $src ) === md5_file( $dst ) );
 		
 		$this->setSizecheck( $data );
+		
+		if (! $data ) {
+			$this->setErrorcode( 4 );
+			$this->setErrormsg( t( 'jblesta.install.file.error.chksum' ) );
+		}
 	}
 	
 	

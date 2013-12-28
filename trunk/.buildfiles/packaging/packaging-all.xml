@@ -11,7 +11,7 @@
 	
 	<target name="packaging_all" depends="properties">
 		
-		<!-- <build_changelog /> -->
+		<build_changelog />
 		
 			<echo message=" " />
 			<echo message="Begin Packaging Belong" />
@@ -24,8 +24,8 @@
 			<echo message=" " />
 			<echo message=" " />
 			
-		<!-- <clean_changelog /> -->
-		<!-- <create_release /> -->
+		<clean_changelog />
+		<create_release />
 		
 	</target>
 	

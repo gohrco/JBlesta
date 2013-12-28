@@ -122,6 +122,7 @@ class JblestaRenderDunModule extends JblestaClientDunModule
 		// -------------------------------------------
 		$jblesta['enabled']		=	true;											// Are we enabled?
 		$jblesta['showinfo']	=	(bool) $config->get( 'showmyinfo', false );
+		$jblesta['showheader']	=	(bool) $config->get( 'showheader', false );
 		$jblesta['headoutput']	=	$this->getItem( 'head' );						// Grab the head data?
 		$jblesta['templatedir']	=	rtrim( get_baseurl( 'jblesta' ), '/' ) . '/templates/' . get_version() . '/';
 		$jblesta['cssdir']		=	rtrim( get_baseurl( 'jblesta' ), '/' ) . '/css/index?f=';

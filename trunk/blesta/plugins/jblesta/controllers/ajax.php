@@ -187,10 +187,37 @@ class Ajax extends JblestaController
 		
 		$updates	=	dunloader( 'updates', 'jblesta' );
 		$result		=	$updates->extract();
+		
+		$data	=	array(
+				'state'		=> 1,
+				'title' 	=> t( 'jblesta.updates.install.title' ),
+				'subtitle'	=> sprintf( t( 'jblesta.updates.install.subtitle' ) ),
+		);
+		
+		$this->outputAsJson( $data );
+		return false;
+	}
+	
+	
+	/**
+	 * Method to complete the upgrade procedure
+	 * @access		public
+	 * @version		@fileVers@
+	 * 
+	 * @return		false			After echoing json data out
+	 * @since		1.0.0
+	 */
+	public function updatefinish()
+	{
+		if (! $this->isAjax() ) {
+			$this->redirect();
+		}
+		
+		$updates	=	dunloader( 'updates', 'jblesta' );
+		$install	=	dunmodule( 'jblesta.install' );
 		$version	=	$updates->getVersion();
 		
-		$install = dunmodule( 'jblesta.install' );
-		$install->upgrade();
+		$install->triggerUpgrade();
 		
 		$data	=	array(
 				'state'		=> 1,

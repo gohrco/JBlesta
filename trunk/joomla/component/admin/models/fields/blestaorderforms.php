@@ -16,9 +16,24 @@ defined('JPATH_PLATFORM') or die;
 
 JFormHelper::loadFieldClass('list');
 
+// -------------------------------------------------------
+// Ensure we have Dunamis and it's loaded
+if (! function_exists( 'get_dunamis' ) ) {
+	$path	= dirname( dirname( dirname( dirname( dirname( dirname(__FILE__) ) ) ) ) ) . DIRECTORY_SEPARATOR . 'libraries' . DIRECTORY_SEPARATOR . 'dunamis' . DIRECTORY_SEPARATOR . 'dunamis.php';
+	if ( file_exists( $path ) ) require_once( $path );
+}
+
+if (! function_exists( 'get_dunamis' ) ) {
+	// EPIC FAILURE HERE
+	return;
+}
+
+get_dunamis( 'com_jblesta' );
+
+
 /**
- * JBlesta Countries Field
- * @desc		This class retrieves a list of available countries from Blesta
+ * JBlesta Companies Field
+ * @desc		This class retrieves a list of companies from Blesta
  * @package		J!Blesta
  * @subpackage	Joomla
  * @author		@packageAuth@
@@ -26,7 +41,7 @@ JFormHelper::loadFieldClass('list');
  * @copyright	@packageCopy@
  * @license		@packageLice@
  */
-class JFormFieldBlestacountries extends JFormFieldList
+class JFormFieldBlestaorderforms extends JFormFieldList
 {
 	/**
 	 * The form field type.
@@ -34,7 +49,7 @@ class JFormFieldBlestacountries extends JFormFieldList
 	 * @var    string
 	 * @since  11.1
 	 */
-	protected $type = 'Blestacountries';
+	protected $type = 'Blestaorderforms';
 
 	/**
 	 * We fetch our optns when we get the input so we can disable if we fail
@@ -54,14 +69,16 @@ class JFormFieldBlestacountries extends JFormFieldList
 	 */
 	protected function getInput()
 	{
+		$config			=	dunloader( 'config', 'com_jblesta' );
+		
 		// Grab the default value if not set
 		if ( empty( $this->value ) ) {
-			$config			=	dunloader( 'config', 'com_jblesta' );
-			$this->value	=	$config->get( 'defaultcountry' );
+			$this->value	=	$config->get( 'registrationform' );
 		}
 		
-		$api			=	dunloader( 'api', 'com_jblesta' );
-		$this->_myoptns	=	$api->getcountries();
+		// Lets get the options here ;-)
+		$api = dunloader( 'api', 'com_jblesta' );
+		$this->_myoptns	=	$api->getorderforms( $config->get( 'blestacompany', false ) );
 		
 		if ( empty( $this->_myoptns ) || $this->_myoptns === false ) {
 			$this->element->addAttribute( 'disabled', 'true' );
@@ -81,14 +98,24 @@ class JFormFieldBlestacountries extends JFormFieldList
 	 */
 	protected function getOptions()
 	{
-		$countries	=	$this->_myoptns;
+		$forms	=	$this->_myoptns;
+		
+		// Catch errors
+		if (! $forms || ! is_array( $forms ) ) {
+			return array();
+		}
 		
 		// Initialize variables.
 		$options = array();
 		
-		foreach ( $countries as $country ) {
+		foreach ( $forms as $form ) {
+			
+			if ( $form->type != 'registration' || $form->status != 'active' ) {
+				continue;
+			}
+			
 			// Create option
-			$tmp = JHtml::_( 'select.option', (string) $country->alpha2, (string) $country->name );
+			$tmp = JHtml::_( 'select.option', (string) $form->id, (string) $form->name );
 			$options[]	=	$tmp;
 		}
 		

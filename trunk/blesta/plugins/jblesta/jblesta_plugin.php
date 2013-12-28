@@ -70,13 +70,8 @@ class JblestaPlugin extends Plugin
 	 */
 	public function getLogo()
 	{
-		return;
-		return	'framework' . DIRECTORY_SEPARATOR .
-		'dunamis' . DIRECTORY_SEPARATOR .
-		'core' . DIRECTORY_SEPARATOR .
-		'assets' . DIRECTORY_SEPARATOR .
-		'img' . DIRECTORY_SEPARATOR  .
-		"dunonblesta.png";
+		return	'assets' . DIRECTORY_SEPARATOR .
+				'logo.png';
 	}
 	
 	

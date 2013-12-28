@@ -1,9 +1,9 @@
 <project>
 	
 	<macrodef name="build_changelog">
-		<attribute name="checkfile" default="buildfiles/config.project" />
+		<attribute name="checkfile" default=".buildfiles/config.project" />
 		<attribute name="logfile" default="CHANGELOG-${project.VERSION}" />
-		<attribute name="logpath" default="buildfiles/changelogs" />
+		<attribute name="logpath" default=".buildfiles/changelogs" />
 		
 		<attribute name="usefile" default="${src.dev}/@{checkfile}" />
 		<attribute name="changelog" default="${src.dev}/@{logpath}/@{logfile}" />
@@ -37,7 +37,7 @@
 	<macrodef name="clean_changelog">
 		
 		<attribute name="logfile" default="CHANGELOG-${project.VERSION}" />
-		<attribute name="logpath" default="buildfiles/changelogs" />
+		<attribute name="logpath" default=".buildfiles/changelogs" />
 		<attribute name="changelog" default="${src.dev}/@{logpath}/@{logfile}" />
 		
 		<attribute name="destfile" default="/CHANGELOG" />

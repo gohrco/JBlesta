@@ -400,6 +400,7 @@ class Com_jblestaDunApi extends DunObject
 	 */
 	public function getcompanies()
 	{
+		if (! is_object( $this->api ) ) return false;
 		return $this->api->get( 'companies', 'getList', array() )->response();
 	}
 	
@@ -417,6 +418,7 @@ class Com_jblestaDunApi extends DunObject
 	 */
 	public function getcountries()
 	{
+		if (! is_object( $this->api ) ) return false;
 		return $this->api->get( 'countries', 'getList', array() )->response();
 	}
 	
@@ -434,6 +436,7 @@ class Com_jblestaDunApi extends DunObject
 	 */
 	public function getcountry( $code = 'US' )
 	{
+		if (! is_object( $this->api ) ) return false;
 		return $this->api->get( 'countries', 'get', array( 'code' => $code ) )->response();
 	}
 	
@@ -496,6 +499,7 @@ class Com_jblestaDunApi extends DunObject
 	 */
 	public function getstate( $country = 'US', $code = 'FL' )
 	{
+		if (! is_object( $this->api ) ) return false;
 		return $this->api->get( 'states', 'get', array( 'country' => $country, 'code' => $code ) )->response();
 	}
 	
@@ -516,6 +520,41 @@ class Com_jblestaDunApi extends DunObject
 		return $this->api->get( 'states', 'getList', array() )->response();
 	}
 	
+	
+	/**
+	 * --------------------------------------------------------------------
+	 * API METHOD	as of api version 1.0
+	 * --------------------------------------------------------------------
+	 * Method to get a specific order form
+	 * @access		public
+	 * @version		@fileVers@
+	 *
+	 * @return		array of objects|false
+	 * @since		1.0.0
+	 */
+	public function getorderform( $order_form_id )
+	{
+		if (! is_object( $this->api ) ) return false;
+		return $this->api->get( 'order.order_forms', 'get', array( 'order_form_id' => $order_form_id ) )->response();
+	}
+	
+	
+	/**
+	 * --------------------------------------------------------------------
+	 * API METHOD	as of api version 1.0
+	 * --------------------------------------------------------------------
+	 * Method to get a list of available order forms
+	 * @access		public
+	 * @version		@fileVers@
+	 *
+	 * @return		array of objects|false
+	 * @since		1.0.0
+	 */
+	public function getorderforms( $company_id )
+	{
+		if (! is_object( $this->api ) ) return false;
+		return $this->api->get( 'order.order_forms', 'getAll', array( 'company_id' => $company_id, 'status' => '' ) )->response();
+	}
 	
 	
 	/**
@@ -561,6 +600,7 @@ class Com_jblestaDunApi extends DunObject
 	 */
 	public function ping()
 	{
+		if (! is_object( $this->api ) ) return false;
 		return $this->api->get( 'companies', 'getall', array() )->response() ? true : false;
 	}
 	

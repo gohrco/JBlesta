@@ -9,6 +9,7 @@
 			<option value="1">JYES</option>
 			<option value="0">JNO</option>
 		</field>
+		<field name="blestacompany" type="blestacompanies" id="blestacompany" description="COM_JBLESTA_CONFIG_BLESTACOMPANY_DESC" filter="string" label="COM_JBLESTA_CONFIG_BLESTACOMPANY_LABEL" message="COM_JBLESTA_CONFIG_BLESTACOMPANY_MESSAGE" default="1" />
 		<field name="downloadid" type="text" label="COM_JBLESTA_CONFIG_DOWNLOADID_LABEL" description="COM_JBLESTA_CONFIG_DOWNLOADID_DESC" class="inputbox" size="40" />
 		
 		<field type="spacer" name="apihr" hr="true" />
@@ -16,15 +17,14 @@
 		<field name="blestaapiurl" type="text" label="COM_JBLESTA_CONFIG_BLESTAAPIURL_LABEL" description="COM_JBLESTA_CONFIG_BLESTAAPIURL_DESC" class="inputbox" size="40" />
 		<field name="blestaapiusername" type="text" label="COM_JBLESTA_CONFIG_BLESTAAPIUSERNAME_LABEL" description="COM_JBLESTA_CONFIG_BLESTAAPIUSERNAME_DESC" class="inputbox" size="40" />
 		<field name="blestaapikey" type="password" label="COM_JBLESTA_CONFIG_BLESTAAPIKEY_LABEL" description="COM_JBLESTA_CONFIG_BLESTAAPIKEY_DESC" class="inputbox" size="40" />
-		<field type="spacer" name="apihr" hr="true" />
-		<field name="blestacompany" type="blestacompanies" id="blestacompany" description="COM_JBLESTA_CONFIG_BLESTACOMPANY_DESC" filter="string" label="COM_JBLESTA_CONFIG_BLESTACOMPANY_LABEL" message="COM_JBLESTA_CONFIG_BLESTACOMPANY_MESSAGE" default="1" />
 		
 		<field type="spacer" name="reghr" hr="true" />
 		<field type="spacer" name="regspacer" label="COM_JBLESTA_SPACER_REG" />
 		<field name="regmethod" type="list" label="COM_JBLESTA_CONFIG_REGMETHOD_LABEL" description="COM_JBLESTA_CONFIG_REGMETHOD_DESC" class="inputbox" default="1">
 			<option value="0">OPTN_JOOMLA_REG</option>
-			<option value="1">OPTN_WHMCS_REG</option>
+			<option value="1">OPTN_BLESTA_REG</option>
 		</field>
+		<field name="registrationform" type="blestaorderforms" id="registrationform" description="COM_JBLESTA_CONFIG_REGISTRATIONFORM_DESC" filter="string" label="COM_JBLESTA_CONFIG_REGISTRATIONFORM_LABEL" message="COM_JBLESTA_CONFIG_REGISTRATIONFORM_MESSAGE" />
 		<field name="defaultcountry" type="blestacountries" id="defaultcountry" description="COM_JBLESTA_CONFIG_DEFAULTCOUNTRY_DESC" filter="string" label="COM_JBLESTA_CONFIG_DEFAULTCOUNTRY_LABEL" message="COM_JBLESTA_CONFIG_DEFAULTCOUNTRY_MESSAGE" default="US" />
 		
 		<field type="spacer" name="tokenhr" hr="true" />
@@ -51,7 +51,7 @@
 		<field name="useraddmethod" type="list" label="COM_JBLESTA_CONFIG_USERADDMETHOD_LABEL" description="COM_JBLESTA_CONFIG_USERADDMETHOD_DESC" class="inputbox" default="4">
 			<option value="0">OPTN_USERADD_NONE</option>
 			<option value="1">OPTN_USERADD_JONLY</option>
-			<option value="2">OPTN_USERADD_WONLY</option>
+			<option value="2">OPTN_USERADD_BONLY</option>
 			<option value="4">OPTN_USERADD_BOTH</option>
 		</field>
 		<field name="useraddusernamepattern" type="list" label="COM_JBLESTA_CONFIG_USERADDUSERNAMEPATTERN_LABEL" description="COM_JBLESTA_CONFIG_USERADDUSERNAMEPATTERN_DESC" class="inputbox" default="4">

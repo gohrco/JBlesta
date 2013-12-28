@@ -27,7 +27,7 @@ class JblestaDunUpdates extends BlestaDunUpdates
 	protected $_exceptions	=	array( 'README.txt' );
 	protected $_expires		=	86400; // TTL
 	protected $_installpath	=	null;
-	protected $_url			=	'https://www.gohigheris.com/updates/jblesta/whmcs-package';
+	protected $_url			=	'https://www.gohigheris.com/updates/jblesta/blesta-package';
 	protected $_version		=	'@fileVers@';
 	
 	/**
@@ -54,7 +54,7 @@ class JblestaDunUpdates extends BlestaDunUpdates
 		
 		// Install path handler
 		if (! $this->hasInstallpath() ) {
-			$path	=	dirname( get_path( null, true ) );
+			$path	=	get_path( null, true );
 			$this->setInstallpath( $path );
 		}
 		
