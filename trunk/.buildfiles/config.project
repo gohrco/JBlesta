@@ -5,13 +5,13 @@ EMAIL=development@gohigheris.com
 URL=https://www.gohigheris.com
 LICENSE=GNU General Public License version 2, or later
 COPYRIGHT=2013-2014 Go Higher Information Services, LLC.  All rights reserved.
-UPDATE_SITE=https://www.gohigheris.com/updates/jblesta/whmcs-package
+UPDATE_SITE=https://www.gohigheris.com/updates/jblesta/blesta-package
 #
 SERIES=1.0
 SHORT=100
 VERSION=1.0.0
 #
-MATURITY=beta
+MATURITY=rc
 ACCESS=Public
 DESCRIPTION=<p></p>
 ITEMACCESS=JBlesta Active AxsLvl
