@@ -88,27 +88,7 @@ class JblestaModelAjax extends JblestaModelExt
 		
 		if ( $api->hasErrors() ) {
 			$data['message']	=	$api->getError();
-			
-			if ( strpos( $data['message'], 'error: 404' ) !== false ) {
-				$msg	=	'ER404';
-			}
-			elseif ( strpos( $data['message'], 'error: 0' ) !== false ) {
-				$msg	=	'ER000';
-			}
-			elseif ( strpos( $data['message'], 'Invalid IP' ) !== false ) {
-				$msg	=	'FIXIP';
-			}
-			elseif ( strpos( $data['message'], 'Invalid Access' ) !== false ) {
-				$msg	=	'FIXXS';
-			}
-			elseif ( strpos( $data['message'], 'Authentication Failed' ) !== false ) {
-				$msg	=	'CREDS';
-			}
-			elseif ( strpos( $data['message'], 'Access Denied' ) !== false ) {
-				$msg	=	'NOAXS';
-			}
-			
-			$data['helpful']	=	JText :: _( 'COM_JBLESTA_APICNXN_HELP_' . $msg );
+			$data['helpful']	=	JText :: _( 'COM_JBLESTA_APICNXN_HELP_ER' . $api->getErrorcode() );
 			return $data;
 		}
 		

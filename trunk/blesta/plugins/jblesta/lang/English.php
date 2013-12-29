@@ -76,23 +76,18 @@ $lang['addon.description']	= '<div>...the premiere Joomla integration solution f
 // -------------------------------------------------------------------------
 // Default Area
 // v1.0.0
-$lang['admin.default.body']		=	'<p>Welcome to J!WHMCS Integrator version 2.5 - the premiere Joomla integration solution for WHMCS!</p>'
+$lang['admin.default.body']		=	'<p>Welcome to J!Blesta!</p>'
 								.	'<h2>Installation</h2>'
-								.	'<p>If this is the first time you have installed version 2.5 of J!WHMCS Integrator into your WHMCS application, be sure you have completely followed the instructions found at<br /><strong><a href="https://support.gohigheris.com/docs/display/J25/New+Installations" target="_blank">https://support.gohigheris.com/docs/display/J25/New+Installations</a></strong>.</p>'
+								.	'<p>If this is the first time you have installed J!Blesta, be sure you have completely followed the instructions found at<br /><strong><a href="https://support.gohigheris.com/docs/display/JBL/New+Installations" target="_blank">https://support.gohigheris.com/docs/display/JBL/New+Installations</a></strong>.</p>'
 								.	'<p>The next steps to folow at this point are <ul>'
-								.	'<li><i class="icon-hang icon-ok"></i> <a href="https://support.gohigheris.com/docs/display/J25/Create+An+API+User+in+WHMCS" target="_blank">Create An API User in WHMCS</a></li>'
-								.	'<li><i class="icon-hang icon-ok"></i> <a href="https://support.gohigheris.com/docs/display/J25/Granting+API+Access+to+WHMCS" target="_blank">Granting API Access to WHMCS</a></li>'
-								.	'<li><i class="icon-hang icon-ok"></i> <a href="https://support.gohigheris.com/docs/display/J25/Add+or+Change+Your+License" target="_blank">Add or Change Your J!WHMCS License</a></li>'
-								.	'<li><i class="icon-hang icon-ok"></i> <a href="https://support.gohigheris.com/docs/display/J25/Setup+the+Shared+API+Token" target="_blank">Setup The Shared API Token</a></li>'
+								.	'<li><i class="icon-hang icon-ok"></i> <a href="https://support.gohigheris.com/docs/display/JBL/Create+An+API+User+in+Blesta" target="_blank">Create An API User in Blesta</a></li>'
+								.	'<li><i class="icon-hang icon-ok"></i> <a href="https://support.gohigheris.com/docs/display/JBL/Add+or+Change+Your+License" target="_blank">Add or Change Your License</a></li>'
 								.	'<li><i class="icon-hang icon-ok"></i> <a href="https://support.gohigheris.com/docs/display/J25/API+Connection+Manager+in+Joomla" target="_blank">API Connection Manager in Joomla</a></li>'
 								.	'</ul>'
 								.	'<h2>How To Guides</h2>'
-								.	'<p>Some additional help in configuring J!WHMCS Integrator to work with WHMCS and Joomla is available in our documentation: <ul>'
-								.	'<li><i class="icon-hang icon-ok"></i> <a href="https://support.gohigheris.com/docs/display/J25/Add+or+Change+Your+License" target="_blank">Add or Change Your License</a></li>'
-								.	'<li><i class="icon-hang icon-ok"></i> <a href="https://support.gohigheris.com/docs/display/J25/Create+An+API+User+in+WHMCS" target="_blank">Create An API User in WHMCS</a></li>'
-								.	'<li><i class="icon-hang icon-ok"></i> <a href="https://support.gohigheris.com/docs/display/J25/Granting+API+Access+to+WHMCS" target="_blank">Granting API Access to WHMCS</a></li>'
-								.	'<li><i class="icon-hang icon-ok"></i> <a href="https://support.gohigheris.com/docs/display/J25/Setup+the+Shared+API+Token" target="_blank">Setup the Shared API Token</a></li>'
-								.	'<li><i class="icon-hang icon-ok"></i> <a href="https://support.gohigheris.com/docs/display/J25/Use+a+custom+template+directory" target="_blank">Use a custom template directory</a></li>'
+								.	'<p>Some additional help in configuring J!Blesta to work with Blesta and Joomla is available in our documentation: <ul>'
+								.	'<li><i class="icon-hang icon-ok"></i> <a href="https://support.gohigheris.com/docs/display/JBL/Add+or+Change+Your+License" target="_blank">Add or Change Your License</a></li>'
+								.	'<li><i class="icon-hang icon-ok"></i> <a href="https://support.gohigheris.com/docs/display/JBL/Create+An+API+User+in+Blesta" target="_blank">Create An API User in Blesta</a></li>'
 								.	'</ul>'
 								.	'';
 

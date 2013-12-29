@@ -72,12 +72,19 @@ class Com_jblestaDunApi extends DunObject
 	
 	/**
 	 * Stores any errors we encounter
-	 * @access		private
+	 * @access		protected
 	 * @var			array
 	 * @since		1.0.0
 	 */
-	private $_error			=	array();
+	protected $_error			=	array();
 	
+	/**
+	 * Stores the respones code in an error
+	 * @access		protected
+	 * @var			string
+	 * @since		1.0.0
+	 */
+	protected $_errorcode		=	null;
 	
 	/**
 	 * Constructor method
@@ -687,6 +694,31 @@ class Com_jblestaDunApi extends DunObject
 	
 	
 	/**
+	 * --------------------------------------------------------------------
+	 * API METHOD	as of api version 1.0
+	 * --------------------------------------------------------------------
+	 * Method for testing the connection
+	 * @access		public
+	 * @version		@fileVers@
+	 *
+	 * @return		boolean
+	 * @since		1.0.0
+	 */
+	public function verify()
+	{
+		if (! is_object( $this->api ) ) return false;
+		$call	=	$this->api->get( 'companies', 'getall', array() );
+		if (! $call->errors() ) return true;
+		
+		$error	=	$call->errors();
+		$this->setError( $error->error->message );
+		$this->setErrorcode( $call->responseCode() );
+		
+		return false;
+	}
+	
+	
+	/**
 	 * Method for calling up the API
 	 * @access		private
 	 * @version		@fileVers@
@@ -763,7 +795,7 @@ class Com_jblestaDunApi extends DunObject
 		
 		$this->api	=	new BlestaApi( $this->_apiurl, $this->_apiuser, $this->_apikey );
 		
-		if (! $this->ping() ) {
+		if (! $this->verify() ) {
 			return;
 		}
 		
