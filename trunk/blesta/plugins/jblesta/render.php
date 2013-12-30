@@ -207,7 +207,7 @@ class JblestaRenderDunModule extends JblestaClientDunModule
 		$footer	=	array_shift( $parts );
 		$footer	=	"\r\n"
 				.	'</div>'
-				.	( $lic->get( 'branding' ) ? '<p style="font-size: x-small; " align="center"><a href="https://www.gohigheris.com" target="blank" alt="custom joomla blesta integration joomla integration hosting">J!Blesta</a></p>' : null )
+				.	( $lic->get( 'branding' ) ? '<p style="font-size: x-small; " align="center"><a href="https://www.gohigheris.com" target="blank" alt="custom joomla blesta integration joomla integration hosting">J!Blesta Integration</a></p>' : null )
 				.	"<!-- End setFooter -->"
 				.	$footer;
 		$this->htmlfooter	=	$footer;

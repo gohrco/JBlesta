@@ -277,7 +277,8 @@ final class JblestaDunLicense extends DunObject
 		}
 		// ---- END JWHMCS-11
 		
-		$runthru = array( 'addons', 'configoptions' );
+		$isactivesup	=	false;
+		$runthru		=	array( 'addons', 'configoptions' );
 		foreach ( $runthru as $run ) {
 			if (! isset( $results[ $run ] ) ) continue;
 				
@@ -303,16 +304,22 @@ final class JblestaDunLicense extends DunObject
 					// Support and Update Check
 					// -------------------------
 					if ( strpos( $addon['name'], 'Support' ) !== false && strpos( $addon['name'], 'Upgrade' ) !== false ) {
-	
+						
+						if ( $addon['status'] == 'Active' ) {
+							$isactivesup			=	true;
+							$results['geldige']		=	true;
+							$results['supnextdue']	=	$addon['nextduedate'];
+							$this->set( 'message', null );
+							continue;
+						}
+						
 						// Grab the upgrade cutoff date and compare to the addon date
-						if ( $this->_upgrade_date() > strtotime( $addon['nextduedate'] ) ) {
+						if ( $this->_upgrade_date() > strtotime( $addon['nextduedate'] ) && ! $isactivesup ) {
 								
 							// If we are here then the upgrade pack is out of date and they can't run this version!
 							$results['geldige'] = false;
 							$this->set( 'message', 'Your Support and Upgrade pack expired prior to this release.  Please renew your upgrade pack in order to run this version' );
 						}
-	
-						$results['supnextdue']	= $addon['nextduedate'];
 					}
 				}
 			}
