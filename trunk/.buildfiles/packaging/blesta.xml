@@ -15,7 +15,7 @@
 			<include name="*.*" />
 		</fileset>
 		
-		<fileset dir="${dunamis.src.build}/blesta/" id="dunamiswhmcsfiles">
+		<fileset dir="${dunamis.src.build}/blesta/" id="dunamisblestafiles">
 			<include name="**/*.*" />
 		</fileset>
 		
@@ -27,12 +27,16 @@
 		<echo message="[2]  Copying Build to Temporary Directory" />
 		<copy todir="${dst.package}/BLESTA">
 			<fileset refid="blestafiles" />
-			<fileset refid="dunamiswhmcsfiles" />
 		</copy>
+		
+		<mkdir dir="${dst.package}/BLESTA/plugins/dunamis" />
+		<mkdir dir="${dst.package}/BLESTA/plugins/dunamis/framework" />
+		
+		<copy todir="${dst.package}/BLESTA/plugins/dunamis"><fileset refid="dunamisblestafiles" /></copy>
+		<copy todir="${dst.package}/BLESTA/plugins/dunamis/framework"><fileset refid="dunamiscorefiles" /></copy>
+		
+		
 		<copy file="${dst.documentation}/README.txt" todir="${dst.package}/BLESTA" />
-		<copy todir="${dst.package}/BLESTA/plugins/jblesta/framework/">
-			<fileset refid="dunamiscorefiles" />
-		</copy>
 		
 		<fileset dir="${dst.package}/BLESTA" id="packagefiles">
 			<include name="**/*.*" />
