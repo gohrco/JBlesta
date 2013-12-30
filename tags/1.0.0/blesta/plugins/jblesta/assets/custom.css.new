@@ -1,0 +1,32 @@
+/* *****************************************************
+	@packageName@
+	custom.css.new
+	-------------------------------------------
+	Compatible with Bletsa 3.0.6 and above
+	-------------------------------------------
+	@package         @packageName@
+	@version         @fileVers@
+	@author          @packageAuth@
+	@link            @packageLink@
+	@copyright       @packageCopy@
+	@license         @packageLice@
+ 	
+	This file provides a means to include custom.css in your
+		integrated page without losing the changes from one
+		update to the next.
+	
+	To use this file:
+		1)  Rename the file to custom.css
+		2)  Add any additional CSS to the file below
+		3)  Save the file and refresh your page
+	
+	The file should automatically be included in your HTML body
+		right after the reset.css and Blesta specific css code.
+	
+***************************************************** */
+
+/* Custom CSS Code Below */
+
+
+
+/* @End of file */

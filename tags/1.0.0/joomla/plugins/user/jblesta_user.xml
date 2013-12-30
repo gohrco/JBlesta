@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<extension version="1.6" type="plugin" method="upgrade" group="user">
+	<name>User - JBlesta</name>
+	<creationDate>@buildDate@</creationDate>
+	<author>@buildAuthor@</author>
+	<authorEmail>@buildEmail@</authorEmail>
+	<authorUrl>@buildUrl@</authorUrl>
+	<copyright>@copyWrite@</copyright>
+	<license>@buildLicense@</license>
+	<version>@fileVers@</version>
+	<description>PLG_USER_JBLESTA_USER_XML_DESCRIPTION</description>
+	
+	<scriptfile />
+	
+	<files>
+		<folder>dunamis</folder>
+		<folder>forms</folder>
+		<folder>language</folder>
+		<filename>index.html</filename>
+		<filename>jblesta_user.dunamis.php</filename>
+		<filename plugin="jblesta_user">jblesta_user.php</filename>
+	</files>
+	
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_user_jblesta_user.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_user_jblesta_user.sys.ini</language>
+	</languages>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="uservers" type="hidden" default="@fileVers@" label="" />
+			</fieldset>
+		</fields>
+	</config>
+	
+	<updateservers />
+    
+</extension>

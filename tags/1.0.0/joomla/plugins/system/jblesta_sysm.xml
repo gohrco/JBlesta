@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<extension version="1.6" type="plugin" method="upgrade" group="system">
+	<name>System - JBlesta</name>
+	<creationDate>@buildDate@</creationDate>
+	<author>@buildAuthor@</author>
+	<authorEmail>@buildEmail@</authorEmail>
+	<authorUrl>@buildUrl@</authorUrl>
+	<copyright>@copyWrite@</copyright>
+	<license>@buildLicense@</license>
+	<version>@fileVers@</version>
+	<description>PLG_SYSTEM_JBLESTA_SYSM_XML_DESCRIPTION</description>
+	
+	<scriptfile />
+	
+	<files>
+		<folder>api</folder>
+		<folder>dunamis</folder>
+		<folder>language</folder>
+		<filename>index.html</filename>
+		<filename>jblesta_sysm.dunamis.php</filename>
+		<filename plugin="jblesta_sysm">jblesta_sysm.php</filename>
+	</files>
+	
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_system_jblesta_sysm.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_system_jblesta_sysm.sys.ini</language>
+	</languages>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="sysmvers" type="hidden" default="@fileVers@" label="" />
+			</fieldset>
+		</fields>
+	</config>
+	
+	<updateservers />
+	
+</extension>

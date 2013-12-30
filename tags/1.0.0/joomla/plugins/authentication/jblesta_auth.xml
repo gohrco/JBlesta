@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<extension version="1.6" type="plugin" method="upgrade" group="authentication">
+	<name>Authentication - J!Blesta</name>
+	<creationDate>@buildDate@</creationDate>
+	<author>@buildAuthor@</author>
+	<authorEmail>@buildEmail@</authorEmail>
+	<authorUrl>@buildUrl@</authorUrl>
+	<copyright>@copyWrite@</copyright>
+	<license>@buildLicense@</license>
+	<version>@fileVers@</version>
+	<description>PLG_AUTHENTICATION_JBLESTA_AUTH_XML_DESCRIPTION</description>
+	
+	<scriptfile />
+	
+	<files>
+		<folder>dunamis</folder>
+		<folder>language</folder>
+		<filename>index.html</filename>
+		<filename>jblesta_auth.dunamis.php</filename>
+		<filename plugin="jblesta_auth">jblesta_auth.php</filename>
+	</files>
+	
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_authentication_jblesta_auth.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_authentication_jblesta_auth.sys.ini</language>
+	</languages>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="authvers" type="hidden" default="@fileVers@" label="" />
+			</fieldset>
+		</fields>
+	</config>
+	
+	<updateservers />
+      
+</extension>

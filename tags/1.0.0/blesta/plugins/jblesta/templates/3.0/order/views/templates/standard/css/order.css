@@ -1,0 +1,81 @@
+@CHARSET "ISO-8859-1";
+
+#jblestawrapper .order .page .left_sec{float: left; width: 680px;}
+#jblestawrapper .step_menu{float: left; width: 959px; border: 1px solid #dcdcdc; padding: 3px 0 4px; margin-bottom: 14px;}
+#jblestawrapper .step_menu ul{float: left; width: 100%;}
+#jblestawrapper .step_menu ul li{float: left; width: auto; padding-left: 15px;}
+#jblestawrapper .step_menu ul li a{float: left; width: 224px; height: 57px; background: url(../images/arrow01.png) no-repeat right center;}
+#jblestawrapper .step_menu ul li a:hover strong{color: inherit;}
+#jblestawrapper .step_menu ul li.active a strong{color: inherit;}
+#jblestawrapper .step_menu ul li.last a{background: none;}
+#jblestawrapper .step_menu ul li a strong{display: block; margin-top: 12px; font: bold 14px/16px Verdana,Arial,Helvetica,sans-serif; color: #7e7e7e;}
+#jblestawrapper .step_menu ul li a em{display: block; font: italic 12px/14px Verdana,Arial,Helvetica,sans-serif; color: #b1b1b1;}
+#jblestawrapper .order .details_sec .content { padding-left: 14px; float: none;}
+#jblestawrapper .order .details_sec .row { margin-top: 11px; padding-left: 3px;}
+#jblestawrapper .order .details_sec .row.first { margin-top: 17px;}
+#jblestawrapper .order .details_sec .row label { color: #797979; display: block; font: bold 12px/18px Verdana,Arial,Helvetica,sans-serif; padding-bottom: 3px;}
+#jblestawrapper .details_sec h4 {font: 14px/20px Verdana,Arial,Helvetica,sans-serif; color: #575757; padding-top: 12px;}
+#jblestawrapper .order .details_sec ul li .aside_sec{float: right; width: 290px; border: 0;}
+#jblestawrapper .order .details_sec ul li.last {padding-bottom: 20px;}
+#jblestawrapper .order .details_sec .row label.inline {display: inline;}
+#jblestawrapper .order .page .right_sec{float: right; width: 265px; border: 1px solid #dedede; background: #fff;}
+#jblestawrapper .order .page .right_sec h3{font: bold 12px/39px Verdana,Arial,Helvetica,sans-serif; color: #575757; text-indent: 15px;}
+#jblestawrapper .order .page .right_sec em{display: block; text-indent: 16px; font: italic 12px/38px Verdana,Arial,Helvetica,sans-serif; color: #616161; border-bottom: 1px solid #f0f0f0; background: #ffffde url(../images/shadow02.jpg) repeat-x 0 0;}
+#jblestawrapper .order .page .right_sec .content{float: left; width: 251px; padding-left: 7px;}
+#jblestawrapper .order .page .right_sec ul{float: left; width: 100%;}
+#jblestawrapper .order .page .right_sec .login ul{border-bottom: 1px solid #f0f0f0;}
+#jblestawrapper .order .page .right_sec ul li{float: left; width: 221px; padding: 10px 21px 14px 9px; border-bottom: 1px solid #e4e4e4; position: relative;}
+#jblestawrapper .order .page .right_sec ul li h3{text-indent: 0; line-height: 14px; background: none;}
+#jblestawrapper .order .page .right_sec ul li em{text-indent: 0; line-height: 14px; background: none; border: 0;}
+#jblestawrapper .order .page .right_sec ul li p{font: 12px/14px Verdana,Arial,Helvetica,sans-serif; color: #616161;}
+#jblestawrapper .order .page .right_sec ul li .cross_btn{position: absolute; bottom: 0; right: -15px; width: 13px; height: 12px;}
+#jblestawrapper .order .page .right_sec ul li.last{border-bottom: 0; width: 234px; padding-right: 8px; padding-bottom: 16px;}
+#jblestawrapper .order .page .right_sec .coupon ul li.last{padding-left: 0px;}
+#jblestawrapper .order .page .right_sec .totals span{display: block;}
+#jblestawrapper .order .page .right_sec .totals .sub_total_box span{text-align: right; font: 12px/14px Verdana,Arial,Helvetica,sans-serif; color: #616161;}
+#jblestawrapper .order .page .right_sec .totals .sub_total_box .row.total {border-top: none; margin: 0px; padding: 0px;}
+#jblestawrapper .order .page .right_sec .totals .sub_total_box em {font-style:normal; font-weight: inherit;}
+#jblestawrapper .order .page .right_sec a{font: bold 12px/14px Verdana,Arial,Helvetica,sans-serif;}
+#jblestawrapper .order .page .right_sec a:hover{text-decoration: underline;}
+#jblestawrapper .order .page .right_sec .totals a{line-height: 35px;}
+#jblestawrapper .order .page .right_sec form .submit-btn{width: auto; height: 19px; padding: 0px 12px; margin-top: 3px; text-transform: uppercase;}
+#jblestawrapper .order .page .right_sec form input[type="text"],
+#jblestawrapper .order .page .right_sec form input[type="password"] {width: 220px;}
+#jblestawrapper .order .submit-btn {text-transform: uppercase;}
+#jblestawrapper .order .page .right_sec .content.login {display: none;}
+#jblestawrapper .order .button_row .submit-btn {margin: 0px 15px 0px 0px; width: auto; padding: 0 20px; height: 29px; border-radius: 20px 20px 20px 20px;}
+#jblestawrapper .order .message_box {margin: 0px 0px 14px;}
+#jblestawrapper .order .message_box ul li {margin: 0px;}
+#jblestawrapper .order .page .right_sec .message_box ul li{width: 200px;}
+#jblestawrapper .order .page .right_sec .message_box ul li a.cross_btn{line-height:13px; top:5px; right:5px; text-decoration:none;}
+#jblestawrapper .order h3{background: #fff; font: bold 14px/18px Verdana,Arial,Helvetica,sans-serif; color: #575757;}
+#jblestawrapper .order .content_section .inner .pad ul {padding: 0px 10px 0px;}
+#jblestawrapper .order .inner .pad.content ul li{border-bottom: 1px solid #e4e4e4; padding-bottom: 7px; margin-bottom: 20px;}
+#jblestawrapper .order .inner .pad.content ul li.last{border-bottom: none; padding-bottom: 0; margin-bottom: 0px;}
+#jblestawrapper .order .inner .pad.content ul.no_border li {border: none; margin-bottom: 11px; padding: 0px;}
+#jblestawrapper .order .inner .pad.content ul.no_border {padding-top: 10px;}
+#jblestawrapper .order .inner .pad.content ul.domain_check {text-align: center;}
+#jblestawrapper .order .inner .pad.content ul li ul li {border-bottom:none; margin-bottom:0; list-style:disc; list-style-position:inside;}
+#jblestawrapper .order .inner .pad.content ul li ol {padding:0;}
+#jblestawrapper .order .inner .pad.content ul li ol li {border-bottom:none; margin-bottom:0; list-style-position:inside;}
+#jblestawrapper .order .content ul li .radios{float: left; width: 355px; margin-top: 15px;}
+#jblestawrapper .order .content .radio_btn{float: left; padding-right: 11px;}
+#jblestawrapper .order .content .radio_btn input{float: left; width: 13px; height: 13px; margin: 0; margin-right: 7px;}
+#jblestawrapper .order .content .radio_btn span{float: left; font: 12px/13px Arial,Helvetica,sans-serif; color: #484848;}
+#jblestawrapper .order .right_sec .content form {float: none; width: auto; display: inline;}
+#jblestawrapper .submit-btn{float: right; width: 70px; height: 19px; border: 1px solid #c5c5c5; padding: 0; margin: 10px 2px 0 8px; display: inline; cursor: pointer; font: bold 10px/19px Verdana,Arial,Helvetica,sans-serif; color: #6e6e6e; text-align: center; padding-bottom: 3px;}
+#jblestawrapper .order ul li .aside_sec .rate{float: right; width: auto; font: 14px/18px Verdana,Arial,Helvetica,sans-serif; color: #bc2222;}
+#jblestawrapper .order ul li .aside_sec .rate strong{font-size: 30px; line-height: 30px; font-weight: normal;}
+#jblestawrapper .order ul li textarea{width:100%; height:75px; border: 1px solid #e3e3eb;}
+#jblestawrapper .content_section .payment_gateway div {float: none; text-align: center; margin: 0 auto;}
+#jblestawrapper .content_section .heading.options.message {height: auto;}
+#jblestawrapper .content_section .login_form.option_section .heading.options {float:left; width:100%}
+#jblestawrapper ul.domain_check li input[type="text"] {font: normal 18px/20px Arial,Helvetica,sans-serif; width: 350px; height: 30px; margin-bottom: 10px;}
+#jblestawrapper h2.available {color: #8dc24a; text-align: center; font-size: 22px; line-height: normal; margin-bottom: 15px; margin-top: 15px;}
+#jblestawrapper h2.unavailable {color: #ce2222; text-align: center; font-size: 22px; line-height: normal; margin-bottom: 15px; margin-top: 15px;}
+#jblestawrapper .group_container { float:left; width:100%; }
+#jblestawrapper .group_container h4 { float:none; padding:10px 0 10px 3px; font:bold 11px Verdana; }
+#jblestawrapper .group_container div.row { padding-left:10px; }
+#jblestawrapper .addon { width: 100%; padding-top: 10px; border-top: 1px dashed #eee; margin-top: 10px; display: inline-block; position: relative;}
+#jblestawrapper .primary { position: relative; }
+

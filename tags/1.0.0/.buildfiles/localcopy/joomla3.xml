@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Copy - Joomla 3.x" basedir=".">
+	
+	
+	<target name="copy_component_to_joomla3" depends="">
+		<echo message=" " />
+		<echo message=" " />
+		<echo message=" +   Copying Joomla Component Files" />
+		<echo message=" " />
+		
+		<!-- Admin Side First -->
+		<delete dir="${local.joomla3}/administrator/components/com_jblesta" />
+		<mkdir dir="${local.joomla3}/administrator/components/com_jblesta" />
+		
+		<fileset dir="${src.build}/joomla/component/admin" id="comadmin" includes="**/*.*" />
+		<copy todir="${local.joomla3}/administrator/components/com_jblesta"><fileset refid="comadmin" /></copy>
+		<copy todir="${local.joomla3}/administrator/components/com_jblesta" file="${src.build}/joomla/component/com_jblesta.xml" />
+		
+		<!-- Media Folder Next -->
+		<delete dir="${local.joomla3}/media/com_jblesta" />
+		<mkdir dir="${local.joomla3}/media/com_jblesta" />
+		<fileset dir="${src.build}/joomla/component/media" id="commedia" includes="**/*.*" />
+		<copy todir="${local.joomla3}/media/com_jblesta"><fileset refid="commedia" /></copy>
+		
+		<!-- Language Files Next -->
+		<fileset dir="${src.build}/joomla/component/translations/admin/en-GB" id="comlangadmin" includes="**/*.*" />
+			<copy todir="${local.joomla3}/administrator/language/en-GB"><fileset refid="comlangadmin" /></copy>
+		<fileset dir="${src.build}/joomla/component/translations/site/en-GB" id="comlangsite" includes="**/*.*" />
+			<copy todir="${local.joomla3}/language/en-GB"><fileset refid="comlangsite" /></copy>
+		
+		<!-- Client Side Next -->
+		<delete dir="${local.joomla3}/components/com_jblesta" />
+		<mkdir dir="${local.joomla3}/components/com_jblesta" />
+		
+		<fileset dir="${src.build}/joomla/component/site" id="comclient" includes="**/*.*" />
+		<copy todir="${local.joomla3}/components/com_jblesta"><fileset refid="comclient" /></copy>
+		
+	</target>
+	
+	<target name="copy_modules_to_joomla3" depends="">
+		<echo message=" " />
+		<echo message=" " />
+		<echo message=" +   Copying Joomla Module Files" />
+		<echo message=" " />
+		
+	</target>
+	
+	<target name="copy_plugins_to_joomla3" depends="">
+		<echo message=" " />
+		<echo message=" " />
+		<echo message=" +   Copying Joomla Plugin Files" />
+		<echo message=" " />
+		
+		<!-- Authentication Plugin -->
+		<fileset dir="${src.build}/joomla/plugins/authentication/" id="authplg">
+			<include name="**/*.*" />
+			<exclude name="language/**/*.*" />
+		</fileset>
+		
+		<delete dir="${local.joomla3}/plugins/authentication/jblesta_auth" />
+		<mkdir dir="${local.joomla3}/plugins/authentication/jblesta_auth" />
+		
+		<copy todir="${local.joomla3}/plugins/authentication/jblesta_auth">
+			<fileset refid="authplg" />
+		</copy>
+		
+		<fileset dir="${src.build}/joomla/plugins/authentication/language/en-GB" id="authlang" includes="**/*.*" />
+		<copy todir="${local.joomla3}/administrator/language/en-GB"><fileset refid="authlang" /></copy>
+		
+		
+		<!-- System Plugin -->
+		<fileset dir="${src.build}/joomla/plugins/system/" id="sysplg">
+			<include name="**/*.*" />
+			<exclude name="language/**/*.*" />
+		</fileset>
+		
+		<delete dir="${local.joomla3}/plugins/system/jblesta_sysm" />
+		<mkdir dir="${local.joomla3}/plugins/system/jblesta_sysm" />
+		
+		<copy todir="${local.joomla3}/plugins/system/jblesta_sysm">
+			<fileset refid="sysplg" />
+		</copy>
+		
+		<fileset dir="${src.build}/joomla/plugins/system/language/en-GB" id="systemlang" includes="**/*.*" />
+		<copy todir="${local.joomla3}/administrator/language/en-GB"><fileset refid="systemlang" /></copy>
+		
+		<!-- User Plugin -->
+		<fileset dir="${src.build}/joomla/plugins/user/" id="userplg">
+			<include name="**/*.*" />
+			<exclude name="language/**/*.*" />
+		</fileset>
+		
+		<delete dir="${local.joomla3}/plugins/user/jblesta_user" />
+		<mkdir dir="${local.joomla3}/plugins/user/jblesta_user" />
+		
+		<copy todir="${local.joomla3}/plugins/user/jblesta_user">
+			<fileset refid="userplg" />
+		</copy>
+		
+		<fileset dir="${src.build}/joomla/plugins/user/language/en-GB" id="userlang" includes="**/*.*" />
+		<copy todir="${local.joomla3}/administrator/language/en-GB"><fileset refid="userlang" /></copy>
+		
+	</target>
+	
+</project>

@@ -1,0 +1,13 @@
+<div id="jblesta">
+
+	<ul class="nav nav-pills">
+		<li><a href="<?php echo $this->Html->safe( get_baseurl() . "plugin/jblesta/main/index/" ); ?>">Client Check Screen</a></li>
+		<li class="active">
+			<a>Check Install</a>
+		</li>
+		<li><a href="<?php echo $this->Html->safe( get_baseurl() . "plugin/jblesta/main/checkrender/" ); ?>">Check Rendering</a></li>
+	</ul>
+	
+	<?php echo $this->Html->ifSet($content); ?>
+	
+</div>
