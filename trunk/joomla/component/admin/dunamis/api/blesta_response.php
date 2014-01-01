@@ -1,5 +1,21 @@
 <?php
 /**
+ * -------------------------------------------
+ * @packageName@
+ * -------------------------------------------
+ * @package         @packageName@
+ * @subpackage		Joomla
+ * @version         @fileVers@
+ *
+ * @author          @packageAuth@
+ * @link            @packageLink@
+ * @copyright       @packageCopy@
+ * @license         @packageLice@
+ */
+
+defined( '_JEXEC' ) or die( 'Restricted access' );
+
+/**
  * Blesta API response handler
  *
  * @copyright Copyright (c) 2013, Phillips Data, Inc.

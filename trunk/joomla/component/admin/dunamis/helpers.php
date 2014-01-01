@@ -13,6 +13,7 @@
  * @license         @packageLice@
  */
 
+defined( '_JEXEC' ) or die( 'Restricted access' );
 
 /**
  * Function for building a full name based on the Blesta user data

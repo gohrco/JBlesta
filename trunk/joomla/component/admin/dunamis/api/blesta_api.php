@@ -1,4 +1,20 @@
 <?php
+/**
+ * -------------------------------------------
+ * @packageName@
+ * -------------------------------------------
+ * @package         @packageName@
+ * @subpackage		Joomla
+ * @version         @fileVers@
+ *
+ * @author          @packageAuth@
+ * @link            @packageLink@
+ * @copyright       @packageCopy@
+ * @license         @packageLice@
+ */
+
+defined( '_JEXEC' ) or die( 'Restricted access' );
+
 require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . "blesta_response.php";
 
 /**

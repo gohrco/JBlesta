@@ -12,6 +12,7 @@
  * @license         @packageLice@
  */
 
+defined( '_JEXEC' ) or die( 'Restricted access' );
 defined('DUNAMIS') OR exit('No direct script access allowed');
 
 /**

@@ -13,6 +13,7 @@
  * @license         @packageLice@
  */
 
+defined( '_JEXEC' ) or die( 'Restricted access' );
 
 if ( version_compare( JVERSION, '3.0', 'ge' ) )
 {

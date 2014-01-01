@@ -12,6 +12,8 @@
  * @license         @packageLice@
  */
 
+defined( '_JEXEC' ) or die( 'Restricted access' );
+
 /**
  * Define the J!Blesta version here
  */
