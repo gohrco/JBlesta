@@ -133,6 +133,7 @@ class JblestaPlugin extends Plugin
 	 */
 	public function install( $plugin_id )
 	{
+		echo 'line 136 Hi'; die();
 		// Test for Dunamis is installed and active
 		if (! function_exists( 'get_dunamis' ) || ( defined( 'DUN_ENV' ) && DUN_ENV != 'BLESTA' ) || ( function_exists( 'is_enabled_on_blesta' ) && ! is_enabled_on_blesta() ) ) {
 			$this->Input->setErrors(
@@ -160,8 +161,10 @@ class JblestaPlugin extends Plugin
 	 */
 	public function preaction()
 	{
+		
 		if (! function_exists( 'dunmodule' ) ) {
 			$path	=	PLUGINDIR . 'dunamis' . DIRECTORY_SEPARATOR . 'framework' . DIRECTORY_SEPARATOR . 'dunamis.php';
+			
 			if (! file_exists( $path ) ) {
 				return;
 			}
@@ -169,10 +172,15 @@ class JblestaPlugin extends Plugin
 			include_once $path;
 		}
 		
+		// Assume if this function doesnt exist the plugin isnt loading
+		if (! function_exists( 'is_ajax' ) ) {
+			return;
+		}
+		
 		// Ensure we aren't in an ajax request 
 		if (! is_ajax() ) {
 			
-			get_dunamis('jblesta');
+			$d = get_dunamis('jblesta');
 			
 			// Run front end stuff
 			if (! is_admin() ) {
