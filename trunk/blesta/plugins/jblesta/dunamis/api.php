@@ -260,7 +260,7 @@ class JblestaDunApi extends DunObject
 			return array_pop( $this->_error );
 		}
 		
-		$config	=	dunloader( 'config', 'jwhmcs' );
+		$config	=	dunloader( 'config', 'jblesta' );
 		$debug	=	$config->get( 'debug', false );
 		
 		$error	=	$this->curl->has_errors();
