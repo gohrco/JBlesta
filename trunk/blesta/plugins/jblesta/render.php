@@ -674,6 +674,11 @@ class JblestaRenderDunModule extends JblestaClientDunModule
 		$data->find		=	$match[0];
 		$data->replace	=	null;
 		
+		if ( strpos( $match['link'], 'data:text/javascript' ) !== false ) {
+			$data->replace	=	$match['front'] . $match['link'] . $match['back'];
+			return $data;
+		}
+		
 		if ( $replaceall ) {
 			$data->replace	=	$match['front'] . $replace . $match['back'];
 			return $data;
