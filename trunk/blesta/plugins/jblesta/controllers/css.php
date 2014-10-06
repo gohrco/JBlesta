@@ -42,6 +42,7 @@ class Css extends JblestaController
 		$file	=	$input->getVar( 'f', false );
 		$dir	=	$input->getVar( 'd', false );
 		$type	=	$input->getVar( 't', false );
+		$format	=	$input->getVar( 'm', 'css' );
 		
 		if (! $file ) {
 			$this->redirect();
@@ -56,17 +57,21 @@ class Css extends JblestaController
 		}
 		
 		$dir	=	str_replace( '/', DIRECTORY_SEPARATOR, $dir );
-		$path	=	dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . $type . $dir . DIRECTORY_SEPARATOR . $file . '.css';
+		$path	=	dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . $type . $dir . DIRECTORY_SEPARATOR . $file . '.' . $format;
 		
 		// See if the file exists first
 		if (! file_exists( $path ) ) {
+			echo $path; die();
 			$this->redirect();
 		}
 		
-		$css	=	file_get_contents( $path );
+		$data	=	file_get_contents( $path );
+		if ( $format == 'css' ) {
+			header("Content-type: text/css");
+			
+		}
 		
-		header("Content-type: text/css");
-		echo $css;
+		echo $data;
 		exit;
 	}
 }
