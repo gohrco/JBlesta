@@ -8,8 +8,8 @@ COPYRIGHT=2013-2014 Go Higher Information Services, LLC.  All rights reserved.
 UPDATE_SITE=https://www.gohigheris.com/updates/jblesta/blesta-package
 #
 SERIES=1.1
-SHORT=110
-VERSION=1.1.0
+SHORT=111
+VERSION=1.1.1
 #
 MATURITY=rc
 ACCESS=Public

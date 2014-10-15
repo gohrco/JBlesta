@@ -1,0 +1,17 @@
+------------------------------------------------------------------------
+r12 | steven_gohigher | 2014-10-02 16:33:13 -0400 (Thu, 02 Oct 2014) | 1 line
+
+*  version 1.1.0 started
+------------------------------------------------------------------------
+r13 | steven_gohigher | 2014-10-02 16:33:45 -0400 (Thu, 02 Oct 2014) | 1 line
+
+#  If Dunamis is uninstalled before JBlesta the entire system whites out across all areas
+------------------------------------------------------------------------
+r14 | steven_gohigher | 2014-10-06 14:54:02 -0400 (Mon, 06 Oct 2014) | 1 line
+
++  Blesta 3.3 support
+------------------------------------------------------------------------
+r15 | steven_gohigher | 2014-10-06 15:54:47 -0400 (Mon, 06 Oct 2014) | 1 line
+
+#  scripts using base64 encoded sources are not filtered out for rendering replacements
+------------------------------------------------------------------------
