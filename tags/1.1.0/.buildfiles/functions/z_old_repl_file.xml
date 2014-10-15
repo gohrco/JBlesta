@@ -1,0 +1,37 @@
+<project>
+
+	<macrodef name="repl_file">
+		<attribute name="src" default="" />
+		<attribute name="dest" default="" />
+		<attribute name="source" default="${src.dev}/@{src}" />
+		<attribute name="destination" default="${dst.build}/@{dest}" />
+		<attribute name="jpath" default="@jpathConfig@" />
+		<attribute name="joomla" default="@joomlaConfig@" />
+		<attribute name="package" default="${p.PROJECT_NAME}" />
+		<attribute name="license" default="${p.PROJECT_LICENSE}" />
+		<attribute name="version" default="${v.VERSION_REVLONG}" />
+		
+		<sequential>
+			<copy file="@{source}" tofile="@{destination}">
+				<filterchain>
+					<replacetokens>
+						<token key="projectName" value="${p.PROJECT_NAME}" />
+						<token key="packageName" value="@{package}" />
+						<token key="fileVers" value="@{version}" />
+						<token key="mainVers" value="${v.VERSION_REVMAIN}" />
+						<token key="buildDate" value="${TODAY}" />
+						<token key="copyWrite" value="${p.PROJECT_CPWRITE}" />
+						<token key="buildAuthor" value="${p.PROJECT_AUTHOR}" />
+						<token key="buildEmail" value="${p.PROJECT_EMAIL}" />
+						<token key="buildUrl" value="${p.PROJECT_URL}" />
+						<token key="buildLicense" value="@{license}" />
+						<token key="jpathConfig" value="@{jpath}" />
+						<token key="joomlaConfig" value="@{joomla}" />
+					</replacetokens>
+				</filterchain>
+			</copy>
+		</sequential>
+		
+	</macrodef>
+	
+</project>

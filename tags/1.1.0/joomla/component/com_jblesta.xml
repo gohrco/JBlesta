@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+	<name>com_jblesta</name>
+	<creationDate>@buildDate@</creationDate>
+	<author>@buildAuthor@</author>
+	<authorEmail>@buildEmail@</authorEmail>
+	<authorUrl>@buildUrl@</authorUrl>
+	<copyright>@copyWrite@</copyright>
+	<license>@buildLicense@</license>
+	<version>@fileVers@</version>
+	<description>J!Blesta</description>
+	
+	<scriptfile>install.script.php</scriptfile>
+	
+	<install />		<!-- SQL Runs on install -->
+	<uninstall />	<!-- SQL Runs on uninstall -->
+	<update />		<!-- SQL Runs on update -->
+	
+	<!-- Public front end files -->
+	<files folder="site">
+		<folder>views</folder>
+		<file>controller.php</file>
+		<file>jblesta.php</file>
+	</files>
+	
+	<media destination="com_jblesta" folder="media">
+		<folder>css</folder>
+		<folder>icons</folder>
+		<folder>js</folder>
+	</media>
+	
+	<languages folder="site/language" />
+	<administration>
+		<menu img="../media/com_jblesta/icons/j-16-jblesta.png">JBlesta</menu>
+		
+		<!-- Back-end files -->
+		<files folder="admin">
+			<folder>controllers</folder>
+			<folder>dunamis</folder>
+			<folder>models</folder>
+			<folder>views</folder>
+			<file>access.xml</file>
+			<file>config.xml</file>
+			<file>jblesta.dunamis.php</file>
+			<file>jblesta.helper.php</file>
+			<file>jblesta.legacy.php</file>
+			<file>jblesta.php</file>
+			<file>jblesta.toolbar.php</file>
+		</files>
+		
+		<languages folder="translations/admin">
+			<language tag="en-GB">en-GB/en-GB.com_jblesta.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_jblesta.menu.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_jblesta.sys.ini</language>
+		</languages>
+		
+	</administration>
+	
+	<updateservers />
+	
+	<additional>
+		<component name="com_dunamis" folder="additional/component/dunamis">Dunamis Component</component>
+		<library name="lib_dunamis" folder="additional/library/dunamis">Dunamis Library</library>
+		<plugin name="jblesta_auth" type="authentication" folder="additional/plugins/authentication" last="false">Authentication Plugin</plugin>
+		<plugin name="jblesta_sysm" type="system" folder="additional/plugins/system" last="false">System Plugin</plugin>
+		<plugin name="jblesta_user" type="user" folder="additional/plugins/user" last="true">User Plugin</plugin>
+	</additional>
+</extension>

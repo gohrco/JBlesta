@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Packaging - Joomla" basedir=".">
+	
+	<import file="../includes.xml" />
+	
+	<target name="package_joomla" depends="properties,dunamis_properties">
+		
+		<!-- FILESET DEFINITIONS -->
+		<fileset dir="${src.build}/joomla/" id="joomlafiles" includes="**/*.*" />
+		<fileset dir="${src.build}/joomla/" id="additionalfiles">
+			<include name="**/*.*" />
+			<exclude name="component/*.*" />
+			<exclude name="component/**/*.*" />
+		</fileset>
+		
+		<fileset dir="${dunamis.src.build}/" id="dunamiscorefiles">
+			<include name="dunamis/**/*.*" />
+			<include name="*.*" />
+		</fileset>
+		
+		<fileset dir="${dunamis.src.build}/joomla/library/" id="dunamisjoomlafiles">
+			<include name="**/*.*" />
+		</fileset>
+		
+		<fileset dir="${dunamis.src.build}/joomla/component/" id="dunamisjoomlscomponent">
+			<include name="**/*.*" />
+		</fileset>
+		
+		<echo message="[1]  Creating Package Temporary Directory" />
+		<mkdir dir="${dst.package}/JOOMLA" />
+		<mkdir dir="${dst.package}/JOOMLA" />
+		
+		<!-- COPY FILES INTO PLACE -->
+		<echo message=" " />
+		<echo message="[2]  Copying Build to Temporary Directory" />
+		<copy todir="${dst.package}/JOOMLA">
+			<fileset refid="joomlafiles" />
+		</copy>
+		
+		<!-- Handle Dunamis library and component next -->
+		<copy todir="${dst.package}/JOOMLA/additional/library/dunamis/dunamis"><fileset refid="dunamiscorefiles" /></copy>
+		<copy todir="${dst.package}/JOOMLA/additional/library/dunamis"><fileset refid="dunamisjoomlafiles" /></copy>
+		<copy todir="${dst.package}/JOOMLA/additional/component/dunamis"><fileset refid="dunamisjoomlscomponent" /></copy>
+		
+		<copy todir="${dst.package}/JOOMLA/additional">
+			<fileset refid="additionalfiles" />
+		</copy>
+		
+		<!-- This is the Component for J!WHMCS -->
+			
+			<fileset dir="${dst.package}/JOOMLA/component" id="componentpackage">
+				<include name="**/*.*" />
+			</fileset>
+			
+			<fileset dir="${dst.package}/JOOMLA" id="pluginpackage">
+				<include name="additional/**/*.*" />
+			</fileset>
+			
+			<delete file="${dst.package}/com_jblesta_v${project.SHORT}.zip" quiet="true" />
+			<zip destfile="${dst.package}/com_jblesta_v${project.SHORT}.zip">
+				<fileset refid="componentpackage" />
+				<fileset refid="pluginpackage" />
+			</zip>
+		
+		<!-- This is the Component for J!WHMCS -->
+		
+		
+		<!-- This is the Authentication Plugin for J!WHMCS -->
+			<fileset dir="${dst.package}/JOOMLA/plugins/authentication" id="authpkgfiles" includes="**/*.*" />
+			<zipr_file srcid="authpkgfiles" dest="/" file="plg_authentication_jblesta_v${project.SHORT}.zip" />
+		<!-- This is the System Plugin for J!WHMCS -->
+		
+		<!-- This is the System Plugin for J!WHMCS -->
+			<fileset dir="${dst.package}/JOOMLA/plugins/system" id="packagefiles" includes="**/*.*" />
+			<zipr_file srcid="packagefiles" dest="/" file="plg_system_jblesta_v${project.SHORT}.zip" />
+		<!-- This is the System Plugin for J!WHMCS -->
+		
+		<!-- This is the User Plugin for J!WHMCS -->
+			<fileset dir="${dst.package}/JOOMLA/plugins/user" id="userpkgfiles" includes="**/*.*" />
+			<zipr_file srcid="userpkgfiles" dest="/" file="plg_user_jblesta_v${project.SHORT}.zip" />
+		<!-- This is the User Plugin for J!WHMCS -->
+		
+		<echo message=" " />
+		<echo message="[4]  Delete Temporary Directory" />
+		<delete dir="${dst.package}/JOOMLA" />
+		
+	</target>
+	
+</project>

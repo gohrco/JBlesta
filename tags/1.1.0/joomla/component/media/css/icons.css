@@ -1,0 +1,90 @@
+@CHARSET "ISO-8859-1";
+
+
+/* Icon Definitions */
+.icon-48-jblesta	{ background-image: url('../icons/jblesta-48.png'); }
+.icon-48-apicnxn	{ background-image: url('../icons/apicnxn-48.png'); }
+.icon-48-updates	{ background-image: url('../icons/updates-48.png'); }
+.icon-32-license	{ background-image: url('../icons/j-32-license.png'); }
+.icon-32-apiconxn	{ background-image: url('../icons/j-32-apicnxn.png'); }
+.icon-32-jblesta	{ background-image: url('../icons/j-32-jblesta.png'); }
+
+
+/* ARE THESE USED? */
+#jblesta .ajaxInitial { background: transparent url('../icons/j-32-initialize.png') 50% 0% no-repeat; }
+#jblesta .ajaxLoading { background: transparent url('../icons/ajax-img.gif') 50% 0% no-repeat; }
+#jblesta .ajaxWaiting { background: transparent url('../icons/j-32-alert.png') 50% 0% no-repeat; }
+#jblesta .ajaxAlert	 { background: transparent url('../icons/j-32-alert.png') 50% 0% no-repeat; }
+#jblesta .ajaxSuccess { background: transparent url('../icons/j-32-yes.png') 50% 0% no-repeat; }
+#jblesta .ajaxError	 { background: transparent url('../icons/j-32-no.png') 50% 0% no-repeat; }
+
+#jblesta .icon.ajaxInitial,
+#jblesta .icon.ajaxLoading,
+#jblesta .icon.ajaxWaiting,
+#jblesta .icon.ajaxAlert,
+#jblesta .icon.ajaxSuccess,
+#jblesta .icon.ajaxError {
+	float: none;
+	height: 32px;
+	margin: 0 auto;
+	width: 32px;
+}
+/* END UNKNOWN SECTION */
+
+
+#jblesta .icon {
+	float: left;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    text-align: center;
+}
+
+#jblesta .icon a {
+	background-color: white;
+    background-position: -30px center;
+    border: 1px solid #AAAAAA;
+    border-radius: 5px 5px 5px 5px;
+    color: #565656;
+    display: block;
+    float: left;
+    height: 97px;
+    padding: 7px 5px 5px;
+    text-decoration: none;
+    transition-property: none;
+    vertical-align: middle;
+    width: 108px;
+}
+
+#jblesta .icon a:hover {
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1) inset, -5px -5px 10px rgba(0, 0, 0, 0.05) inset;
+}
+
+#jblesta .icon img {
+	border: 0 none;
+    height: 48px;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 10px 0;
+    vertical-align: middle;
+}
+
+/* AJAX Icon Definitions */
+#jblesta .icon img.ajaxicon {
+	background-position: 50% 10px;
+	background-repeat: no-repeat;
+	display: block;
+	height: 48px;
+	width: 48px;
+}
+
+#jblesta .icon img.found			{	background-image: url( '../icons/updates-48.png' ); }
+#jblesta .icon img.current		{	background-image: url( '../icons/accept-48.png' ); }
+#jblesta .icon img.unsupported	{	background-image: url( '../icons/unsupported-48.png' ); }
+#jblesta .icon img.stall			{	background-image: url( '../icons/error-48.png' ); }
+/* END AJAX Icon Definitions */
+
+#jblesta .icon span {
+	display: block;
+    text-align: center;
+}

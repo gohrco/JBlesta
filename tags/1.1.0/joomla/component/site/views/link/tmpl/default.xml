@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	
+	<layout title="COM_JBLESTA_MENUITEM_LINK_TITLE">
+		<message>
+			<![CDATA[COM_JBLESTA_MENUITEM_LINK_DESC]]>
+		</message>
+	</layout>
+	
+	<fields name="params" addfieldpath="/administrator/components/com_jblesta/models/fields">
+		<fieldset name="params" label="COM_JBLESTA_LINK_VIEW_PARAMS_TITLE">
+			<field name="location" type="pagelist" label="COM_JBLESTA_PAGELIST_LABEL" description="COM_JBLESTA_PAGELIST_DESC" default="" />
+		</fieldset>
+	</fields>
+	
+</metadata>

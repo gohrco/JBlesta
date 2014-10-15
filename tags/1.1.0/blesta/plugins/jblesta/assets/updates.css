@@ -1,0 +1,66 @@
+@CHARSET "ISO-8859-1";
+
+#jblesta #btn-updates {
+	background-color: hsl(209, 0%, 86%) !important;
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f9f9f9", endColorstr="#dbdbdb");
+	background-image: -khtml-gradient(linear, left top, left bottom, from(#f9f9f9), to(#dbdbdb));
+	background-image: -moz-linear-gradient(top, #f9f9f9, #dbdbdb);
+	background-image: -ms-linear-gradient(top, #f9f9f9, #dbdbdb);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f9f9f9), color-stop(100%, #dbdbdb));
+	background-image: -webkit-linear-gradient(top, #f9f9f9, #dbdbdb);
+	background-image: -o-linear-gradient(top, #f9f9f9, #dbdbdb);
+	background-image: linear-gradient(#f9f9f9, #dbdbdb);
+	border-color: #dbdbdb #dbdbdb hsl(209, 0%, 83%);
+	color: #333 !important;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.19);
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Common for all the ajax button styles */
+#jblesta #btn-updates {
+	padding: 0px;
+	width: 250px;
+}
+
+#jblesta .ajaxupdate {
+	height: 210px;
+	width: 250px;
+}
+
+#jblesta .ajaxupdate span {
+	color: #333333;
+	display: block;
+	font-size: 135%;
+	font-weight: bold;
+	padding: 15px 0;
+	text-align: center;
+}
+
+#jblesta .ajaxupdate span#upd-subtitle {
+	font-size: 90%;
+}
+
+#jblesta #img-updates {
+	display: block;
+    margin: 20px auto 20px;
+    max-width: 0;
+    padding: 32px;
+}
+
+#jblesta .update-check,
+#jblesta .update-init {
+	background-image: url("ajax-loader.gif");
+}
+
+#jblesta .update-current {
+	background-image: url("accept-64.png");
+}
+
+#jblesta .update-found {
+	background-image: url("found-64.png");
+}
+
+#jblesta .update-error {
+	background-image: url("warning-64.png");
+}

@@ -1,0 +1,142 @@
+@CHARSET "ISO-8859-1";
+
+/*
+    Tripoli is a generic CSS standard for HTML rendering. 
+    Copyright (C) 2007  David Hellsing
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+#jblestawrapper * {
+	text-decoration: none;
+	/*font-size: 1em;*/
+	outline: none;
+	padding: 0;
+	margin: 0;
+}
+
+#jblestawrapper code,
+#jblestawrapper kbd,
+#jblestawrapper samp,
+#jblestawrapper pre,
+#jblestawrapper tt,
+#jblestawrapper var,
+#jblestawrapper textarea,
+#jblestawrapper input,
+#jblestawrapper select,
+#jblestawrapper isindex,
+#jblestawrapper listing,
+#jblestawrapper xmp,
+#jblestawrapper plaintext {
+	white-space: normal;
+	/*font-size: 1em;*/
+	font: inherit;
+	width: auto;
+}
+
+#jblestawrapper dfn,
+#jblestawrapper i,
+#jblestawrapper cite,
+#jblestawrapper var,
+#jblestawrapper address,
+#jblestawrapper em { 
+	/*font-style: normal;*/ 
+}
+
+#jblestawrapper th,
+#jblestawrapper b,
+#jblestawrapper strong,
+#jblestawrapper h1,
+#jblestawrapper h2,
+#jblestawrapper h3,
+#jblestawrapper h4,
+#jblestawrapper h5,
+#jblestawrapper h6 { 
+	/*font-weight: normal; */
+}
+	
+#jblestawrapper a,
+#jblestawrapper img,
+#jblestawrapper a img,
+#jblestawrapper iframe,
+#jblestawrapper form,
+#jblestawrapper fieldset,
+#jblestawrapper abbr,
+#jblestawrapper acronym,
+#jblestawrapper object,
+#jblestawrapper applet,
+#jblestawrapper table {
+	border: none; 
+}
+
+#jblestawrapper table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#jblestawrapper caption,
+#jblestawrapper th,
+#jblestawrapper td,
+#jblestawrapper center { 
+	vertical-align: top;
+	text-align: left;
+}
+
+#jblestawrapper { 
+	background: white; 
+	line-height: 1; 
+	color: black; 
+}
+
+#jblestawrapper q { 
+	quotes: "" ""; 
+}
+
+#jblestawrapper ul,
+#jblestawrapper ol,
+#jblestawrapper dir,
+#jblestawrapper menu { 
+	list-style: none; 
+}
+
+#jblestawrapper sub,
+#jblestawrapper sup { 
+	vertical-align: baseline; 
+}
+
+#jblestawrapper a { 
+	color: inherit; 
+}
+
+#jblestawrapper hr { 
+	display: none; 
+}
+#jblestawrapper font { 
+	color: inherit !important; 
+	font: inherit !important; 
+	color: inherit !important; /* editor's note: necessary? */ 
+}
+
+#jblestawrapper marquee {
+	overflow: inherit !important;
+	-moz-binding: none;
+}
+
+#jblestawrapper blink { 
+	text-decoration: none; 
+}
+
+#jblestawrapper nobr { 
+	white-space: normal; 
+}

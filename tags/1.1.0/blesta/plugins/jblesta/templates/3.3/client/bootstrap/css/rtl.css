@@ -1,0 +1,9 @@
+#jblestawrapper .logo { float: right; margin: 13px 0 3px 15px;}
+#jblestawrapper .header { float: right;}
+#jblestawrapper .title { float: right;}
+#jblestawrapper .table-curved tbody>tr>td:last-child { border-left: 1px solid #e1e1e1;}
+#jblestawrapper .table-curved tbody>tr>td:first-child { border-left: none;}
+#jblestawrapper .table-curved th:first-child { border-radius: 0;}
+#jblestawrapper .panel-nav { float: right;}
+#jblestawrapper div.panel-body div.alert { clear: both;}
+
