@@ -120,7 +120,6 @@ class JblestaUserDunModule extends BlestaDunModule
 		$result		=	$api->edituser( $user );
 		
 		if ( $api->hasErrors() ) {
-			_e( $api,1 );
 			return false;
 		}
 		
